@@ -6,7 +6,8 @@ export default function ThemeToggle() {
     return (
         <button
         onClick={toggleTheme}
-        className="p-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-600 transition-colors"
+        // className="p-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-600 transition-colors"
+        className="p-3 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-500 transition-colors duration-200"
         aria-label="Toogle theme"
         >
             {theme === 'light' ? (
