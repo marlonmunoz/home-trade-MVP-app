@@ -9,7 +9,9 @@ function App() {
       <div className="container mx-auto px-4 py-8">
 
         <header className="flex justify-between items-center mb-12">
-          <h1 className="text-5xl font-bold text-blue-600 dark:text-blue-400 drop-shadow-lg shadow-white flex items-center gap-3">
+          
+          {/* <h1 className="text-5xl font-bold text-blue-600 dark:text-blue-400 drop-shadow-lg shadow-white flex items-center gap-3"> */}
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-300 via-blue-500 via-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-2xl flex items-baseline gap-3 tracking-wider uppercase font-black">
             {/* <svg className="w-9 h-9 mb-1" fill="currentColor" viewBox="0 0 24 24"> */}
             {/* <svg className="w-10 h-10 text-orange-500 hover:scale-110 transition-transform duration-300 animate-bounce" fill="currentColor" viewBox="0 0 24 24"> */}
             <svg className="w-10 h-10 text-orange-500 hover:scale-105 hover:-translate-y-1 transition-all duration-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
