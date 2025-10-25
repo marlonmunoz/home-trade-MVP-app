@@ -16,7 +16,7 @@ function App() {
         <div className="flex items-center justify-center">
           <div className="text-center">
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-6">
-              Your only real state platform
+              YOUR ONLY REAL STATE PLATFORM
             </p>
             <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg transition-colors">
               Get Started

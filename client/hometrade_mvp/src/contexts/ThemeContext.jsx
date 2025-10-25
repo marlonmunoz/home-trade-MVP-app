@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState } from 'react'
 const ThemeContext = createContext()
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark') // app starts with dark mode, but you can change it light mode as it fits
 
   // Check localStorage and system preference on mount
   useEffect(() => {
