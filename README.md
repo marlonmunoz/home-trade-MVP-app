@@ -11,3 +11,4 @@ Welcome to Home Trade, a real state platform
 # Technologies
 - JavaScript
 - React
+- Tailwind
