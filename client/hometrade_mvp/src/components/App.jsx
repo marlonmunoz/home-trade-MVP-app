@@ -10,7 +10,12 @@ function App() {
 
         <header className="flex justify-between items-center mb-12">
           <h1 className="text-5xl font-bold text-blue-600 dark:text-blue-400 drop-shadow-lg shadow-white flex items-center gap-3">
-            <svg className="w-9 h-9 mb-1" fill="currentColor" viewBox="0 0 24 24">
+            {/* <svg className="w-9 h-9 mb-1" fill="currentColor" viewBox="0 0 24 24"> */}
+            <svg className="w-10 h-10 hover:scale-110 transition-transform duration-300 animate-bounce" fill="currentColor" viewBox="0 0 24 24">
+            {/* <svg className="w-10 h-10 hover:scale-105 hover:-translate-y-1 transition-all duration-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24"> */}
+            {/* <svg className="w-10 h-10 hover:rotate-12 hover:scale-110 transition-transform duration-500 ease-out" fill="currentColor" viewBox="0 0 24 24"> */}
+            {/* <svg className="w-10 h-10 hover:scale-125 transition-transform duration-200 animate-pulse" fill="currentColor" viewBox="0 0 24 24"> */}
+            {/* <svg className="w-10 h-10 hover:animate-bounce transition-all duration-300" fill="currentColor" viewBox="0 0 24 24"> */}
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
             </svg>
             HOME TRADE TECH
