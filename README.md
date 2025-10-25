@@ -1,4 +1,4 @@
-# home-trade-MVP-app
+# Home-Trade-MVP-app
 Welcome to Home Trade, a real state platform
 
 ## RUN client
@@ -7,3 +7,7 @@ Welcome to Home Trade, a real state platform
 3. `npm run dev`
 
 ## RUN server
+
+# Technologies
+- JavaScript
+- React
