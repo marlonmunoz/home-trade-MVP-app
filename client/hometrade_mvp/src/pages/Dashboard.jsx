@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-  const { user } = useAuth();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+  const [onboardingData, setOnboardingData] = useState(null);
+
+  useEffect(() => {
+    if (user) {
+      const saved = localStorage.getItem(`onboarding_${user.email}`);
+      if (saved) {
+        setOnboardingData(JSON.parse(saved));
+      }
+    }
+  }, [user]);
+
+  const handleLoginRedirect = () => {
+    navigate("/login");
+  };
 
   if (!user) {
     return (
@@ -14,6 +30,12 @@ const Dashboard = () => {
           <p className="text-gray-600 dark:text-gray-300">
             Please log in or register to access your dashboard.
           </p>
+          <button
+            onClick={handleLoginRedirect}
+            className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          >
+            Go to Login
+          </button>
         </div>
       </div>
     );
@@ -25,30 +47,42 @@ const Dashboard = () => {
         <h1 className="text-3xl font-bold text-blue-600 mb-4">
           Welcome back, {user.name.split(" ")[0]} 👋
         </h1>
-
-        <p className="text-gray-600 dark:text-gray-300 mb-8">
-          You are logged in as a <span className="font-semibold">{user.role}</span>.
+        <p className="text-gray-600 dark:text-gray-300 mb-6">
+          You're logged in as a <span className="font-semibold">{user.role}</span>.
         </p>
 
-        {user.role === "buyer" ? (
+        {onboardingData ? (
           <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 max-w-lg mx-auto">
-            <h2 className="text-xl font-semibold mb-2 text-blue-500">
-              Buyer Dashboard
+            <h2 className="text-xl font-semibold mb-3 text-green-500">
+              Your Onboarding Details
             </h2>
-            <p className="text-gray-600 dark:text-gray-300">
-              Here you'll see your saved properties, viewed listings, and upcoming recommendations.
-            </p>
+            <pre className="text-left text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded p-4 overflow-x-auto">
+              {JSON.stringify(onboardingData, null, 2)}
+            </pre>
           </div>
         ) : (
-          <div className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 max-w-lg mx-auto">
-            <h2 className="text-xl font-semibold mb-2 text-purple-500">
-              Seller Dashboard
+          <div className="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-300 dark:border-yellow-700 rounded-lg p-6 max-w-lg mx-auto">
+            <h2 className="text-xl font-semibold mb-2 text-yellow-600 dark:text-yellow-400">
+              No onboarding data found
             </h2>
-            <p className="text-gray-600 dark:text-gray-300">
-              Here you'll manage your property listings and track interested buyers.
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              Let's complete your setup so we can personalize your experience.
             </p>
+            <button
+              onClick={() => navigate("/onboarding")}
+              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Complete Onboarding
+            </button>
           </div>
         )}
+
+        <button
+          onClick={logout}
+          className="mt-10 text-red-500 font-semibold hover:underline"
+        >
+          Logout
+        </button>
       </div>
     </div>
   );

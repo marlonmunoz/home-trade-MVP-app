@@ -40,7 +40,7 @@ const Register = () => {
     // ✅ Simulate a brief delay (like waiting for backend)
     setTimeout(() => {
       login(newUser, "fake-jwt-token");
-      navigate("/dashboard");
+      navigate("/onboarding");
     }, 1500); // 1.5 seconds delay
   };
 
