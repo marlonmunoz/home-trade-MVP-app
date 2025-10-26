@@ -71,48 +71,61 @@ const Onboarding = () => {
                 onChange={handleChange}
                 className='border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white'
               />
+              <select
+                name='propertyType'
+                value={form.propertyType}
+                onChange={handleChange}
+                className='border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white'
+              >
+                <option value="">Property Type</option>
+                <option value="">Apartment</option>
+                <option value="">House</option>
+                <option value="">Condo</option>
+              </select>
             </>
-
-
           )}
+
+          {/* Seller onboarding */}
+          {user.role === 'seller' && (
+            <>
+              <input
+                name='city'
+                placeholder='Property City'
+                value={form.city}
+                onChange={handleChange}
+                className='border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white'              
+              />
+              <input
+                name='propertyType'
+                placeholder='Property Type (House, Condo, etc.)'
+                value={form.propertyType}
+                onChange={handleChange}
+                className='border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white'              
+              />
+              <input
+                name='contact'
+                placeholder='Contact Phone Number'
+                value={form.contact}
+                onChange={handleChange}
+                className='border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white'              
+              />
+            </>
+          )}
+
+          <button
+            type='submit'
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded transition"
+          >
+            Finish Setup
+          </button>
         
         </form>
       </div>
 
     </div>
-  )
-
-}
-
-// const Onboarding = () => {
-//   return (
-//     <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
-//       <div className="container mx-auto px-4 py-8">
-//         <div className="max-w-2xl mx-auto text-center">
-//           <h1 className="text-3xl font-bold mb-8">Welcome to HomeTrade Tech!</h1>
-//           <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg">
-//             <h2 className="text-xl font-semibold mb-4">Getting Started</h2>
-//             <p className="text-gray-600 dark:text-gray-400 mb-6">
-//               Let's set up your profile and get you started with property trading.
-//             </p>
-//             <div className="space-y-4">
-//               <div className="bg-white dark:bg-gray-700 p-4 rounded">
-//                 <p>Step 1: Complete your profile</p>
-//               </div>
-//               <div className="bg-white dark:bg-gray-700 p-4 rounded">
-//                 <p>Step 2: Verify your identity</p>
-//               </div>
-//               <div className="bg-white dark:bg-gray-700 p-4 rounded">
-//                 <p>Step 3: Start exploring properties</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-
+  );
+};
 
 export default Onboarding;
+
+
