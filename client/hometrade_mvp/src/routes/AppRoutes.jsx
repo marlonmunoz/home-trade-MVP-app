@@ -13,17 +13,20 @@ import Footer from "../components/Footer";
 const AppRoutes = () => {
     return (
         <BrowserRouter>
-            <Navbar />
-            <main>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/onboarding" element={<Onboarding />} />
-                    <Route path="/property/:id" element={<PropertyDetails />} />
-                </Routes>
-            </main>
+            <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors flex flex-col">
+                <Navbar />
+                <main className="flex-1">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/onboarding" element={<Onboarding />} />
+                        <Route path="/property/:id" element={<PropertyDetails />} />
+                    </Routes>
+                </main>
+                <Footer />
+            </div>
         </BrowserRouter>
     );
 };

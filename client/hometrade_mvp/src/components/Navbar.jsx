@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -19,13 +20,13 @@ const Navbar = () => {
           HomeTrade
         </Link>
 
-        <div className="space-x-4">
+        <div className="flex items-center space-x-4">
           {!user ? (
             <>
               <Link
                 to="/"
                 className={`${
-                  location.pathname === "/" ? "text-blue-600" : "text-gray-700"
+                  location.pathname === "/" ? "text-blue-600" : "text-gray-700 dark:text-gray-300"
                 } hover:text-blue-600 font-medium`}
               >
                 Home
@@ -35,7 +36,7 @@ const Navbar = () => {
                 className={`${
                   location.pathname === "/login"
                     ? "text-blue-600"
-                    : "text-gray-700"
+                    : "text-gray-700 dark:text-gray-300"
                 } hover:text-blue-600 font-medium`}
               >
                 Login
@@ -57,7 +58,7 @@ const Navbar = () => {
                 className={`${
                   location.pathname === "/dashboard"
                     ? "text-blue-600"
-                    : "text-gray-700"
+                    : "text-gray-700 dark:text-gray-300"
                 } hover:text-blue-600 font-medium`}
               >
                 Dashboard
@@ -65,7 +66,7 @@ const Navbar = () => {
               {user.role === "seller" && (
                 <Link
                   to="/property/:id"
-                  className="text-gray-700 hover:text-blue-600 font-medium"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 font-medium"
                 >
                   My Listings
                 </Link>
@@ -78,6 +79,11 @@ const Navbar = () => {
               </button>
             </>
           )}
+          
+          {/* Theme Toggle - Always visible */}
+          <div className="ml-4 border-l border-gray-300 dark:border-gray-600 pl-4">
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>
