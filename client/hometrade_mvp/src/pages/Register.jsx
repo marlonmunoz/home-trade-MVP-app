@@ -1,18 +1,70 @@
-import React from 'react';
+import React, { useState } from "react";
 
 const Register = () => {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    role: "buyer",
+  });
+
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Register:", form);
+  };
+
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-md mx-auto">
-          <h1 className="text-3xl font-bold text-center mb-8">Register</h1>
-          <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg">
-            <p className="text-center text-gray-600 dark:text-gray-400">
-              Registration form coming soon...
-            </p>
-          </div>
-        </div>
-      </div>
+    <div className="flex justify-center mt-12">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md"
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
+          Register
+        </h2>
+        <input
+          type="text"
+          name="name"
+          placeholder="Full Name"
+          value={form.name}
+          onChange={handleChange}
+          className="border border-gray-300 rounded w-full p-2 mb-3"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={handleChange}
+          className="border border-gray-300 rounded w-full p-2 mb-3"
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={form.password}
+          onChange={handleChange}
+          className="border border-gray-300 rounded w-full p-2 mb-3"
+        />
+        <select
+          name="role"
+          value={form.role}
+          onChange={handleChange}
+          className="border border-gray-300 rounded w-full p-2 mb-4"
+        >
+          <option value="buyer">Buyer</option>
+          <option value="seller">Seller</option>
+        </select>
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+        >
+          Create Account
+        </button>
+      </form>
     </div>
   );
 };

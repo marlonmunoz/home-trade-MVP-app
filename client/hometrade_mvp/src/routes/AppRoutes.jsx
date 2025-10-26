@@ -20,8 +20,8 @@ const AppRoutes = () => {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="onboarding" element={<Onboarding />} />
-                    <Route path="property/:id" element={<PropertyDetails />} />
+                    <Route path="/onboarding" element={<Onboarding />} />
+                    <Route path="/property/:id" element={<PropertyDetails />} />
                 </Routes>
             </main>
         </BrowserRouter>
