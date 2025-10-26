@@ -7,6 +7,8 @@ import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
 import Onboarding from "../pages/Onboarding"
 import PropertyDetails from "../pages/PropertyDetails";
+import AddProperty from "../pages/AddProperty";
+import MyListing from "../pages/MyListing";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -23,6 +25,8 @@ const AppRoutes = () => {
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/onboarding" element={<Onboarding />} />
                         <Route path="/property/:id" element={<PropertyDetails />} />
+                        <Route path="/add-property" element={<AddProperty />}/>
+                        <Route path="/my-listings" element={<MyListing />}/>
                     </Routes>
                 </main>
                 <Footer />
