@@ -29,3 +29,6 @@ const AppRoutes = () => {
 };
 
 export default AppRoutes;
+
+
+// CONCEPTS REINFORCED: routing hierarchy, reusable layout, component composition 
