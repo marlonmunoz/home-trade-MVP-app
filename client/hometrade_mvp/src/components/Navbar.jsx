@@ -69,6 +69,18 @@ const Navbar = () => {
                   <LayoutDashboard size={18} /> Dashboard
                 </Link>
 
+                <Link
+                  to="/properties"
+                  className={`flex items-center gap-1 ${
+                    location.pathname === "/properties"
+                      ? "text-blue-600"
+                      : "text-gray-700"
+                  } hover:text-blue-600 font-medium`}
+                >
+                  All Properties
+                </Link>
+
+
                 {/* --- Seller-only Links --- */}
                 {user.role === "seller" && (
                   <>

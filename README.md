@@ -13,3 +13,15 @@ Welcome to Home Trade, a real state platform
 - JavaScript
 - React
 - Tailwind
+
+## TESTING
+- Account as buyer
+    * Buyer M
+    * buyerm@nothing.com
+    * 123456
+    * Buyer
+- Account as seller
+    * Seller J
+    * sellerj@nothing.com
+    * 123456
+    * Seller
