@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 const Register = () => {
@@ -115,6 +115,19 @@ const Register = () => {
           >
             {success ? "Redirecting..." : "Create Account"}
           </button>
+
+          {/* Link for existing users */}
+          <div className="text-center mt-4">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="text-blue-600 hover:text-blue-700 font-medium hover:underline"
+              >
+                Sign in here
+              </Link>
+            </p>
+          </div>
         </form>
       </div>
     </div>
