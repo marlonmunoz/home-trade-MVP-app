@@ -9,6 +9,7 @@ import Onboarding from "../pages/Onboarding"
 import PropertyDetails from "../pages/PropertyDetails";
 import AddProperty from "../pages/AddProperty";
 import MyListing from "../pages/MyListing";
+import AllProperties from "../pages/AllProperties";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -27,6 +28,7 @@ const AppRoutes = () => {
                         <Route path="/property/:id" element={<PropertyDetails />} />
                         <Route path="/add-property" element={<AddProperty />}/>
                         <Route path="/my-listings" element={<MyListing />}/>
+                        <Route path="/properties" element={<AllProperties />} />
                     </Routes>
                 </main>
                 <Footer />
