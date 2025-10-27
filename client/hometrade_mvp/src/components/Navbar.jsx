@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -16,17 +15,23 @@ const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-gray-900 shadow-md py-4 px-6">
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-blue-600">
+        {/* 🏠 Brand */}
+        <Link
+          to="/"
+          className="text-2xl font-bold text-blue-600 hover:text-blue-700"
+        >
           HomeTrade
         </Link>
 
-        <div className="flex items-center space-x-4">
+        {/* 🌐 Navigation Links */}
+        <div className="space-x-4 flex items-center">
+          {/* 👤 Guest view (no user logged in) */}
           {!user ? (
             <>
               <Link
                 to="/"
                 className={`${
-                  location.pathname === "/" ? "text-blue-600" : "text-gray-700 dark:text-gray-300"
+                  location.pathname === "/" ? "text-blue-600" : "text-gray-700"
                 } hover:text-blue-600 font-medium`}
               >
                 Home
@@ -36,7 +41,7 @@ const Navbar = () => {
                 className={`${
                   location.pathname === "/login"
                     ? "text-blue-600"
-                    : "text-gray-700 dark:text-gray-300"
+                    : "text-gray-700"
                 } hover:text-blue-600 font-medium`}
               >
                 Login
@@ -50,27 +55,50 @@ const Navbar = () => {
             </>
           ) : (
             <>
+              {/* 👋 Logged-in user view */}
               <span className="text-gray-600 dark:text-gray-300 font-medium">
                 Hi, {user.name.split(" ")[0]}
               </span>
+
               <Link
                 to="/dashboard"
                 className={`${
                   location.pathname === "/dashboard"
                     ? "text-blue-600"
-                    : "text-gray-700 dark:text-gray-300"
+                    : "text-gray-700"
                 } hover:text-blue-600 font-medium`}
               >
                 Dashboard
               </Link>
+
+              {/* 🏠 Seller-only links */}
               {user.role === "seller" && (
-                <Link
-                  to="/property/:id"
-                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 font-medium"
-                >
-                  My Listings
-                </Link>
+                <>
+                  <Link
+                    to="/add-property"
+                    className={`${
+                      location.pathname === "/add-property"
+                        ? "text-blue-600"
+                        : "text-gray-700"
+                    } hover:text-blue-600 font-medium`}
+                  >
+                    Add Property
+                  </Link>
+
+                  <Link
+                    to="/my-listings"
+                    className={`${
+                      location.pathname === "/my-listings"
+                        ? "text-blue-600"
+                        : "text-gray-700"
+                    } hover:text-blue-600 font-medium`}
+                  >
+                    My Listings
+                  </Link>
+                </>
               )}
+
+              {/* 🚪 Logout button */}
               <button
                 onClick={handleLogout}
                 className="text-red-600 font-semibold hover:underline"
@@ -79,11 +107,6 @@ const Navbar = () => {
               </button>
             </>
           )}
-          
-          {/* Theme Toggle - Always visible */}
-          <div className="ml-4 border-l border-gray-300 dark:border-gray-600 pl-4">
-            <ThemeToggle />
-          </div>
         </div>
       </div>
     </nav>
