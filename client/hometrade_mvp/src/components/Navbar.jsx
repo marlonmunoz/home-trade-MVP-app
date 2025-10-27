@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import ThemeToggle from "./ThemeToggle";
 import {
   Home,
   PlusCircle,
@@ -40,7 +41,7 @@ const Navbar = () => {
               <>
                 <Link
                   to="/login"
-                  className="text-gray-700 hover:text-blue-600 font-medium flex items-center gap-1"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 font-medium flex items-center gap-1"
                 >
                   <LogIn size={18} /> Login
                 </Link>
@@ -50,6 +51,8 @@ const Navbar = () => {
                 >
                   <UserPlus size={18} /> Register
                 </Link>
+                {/* Theme Toggle for guests */}
+                <ThemeToggle />
               </>
             ) : (
               <>
@@ -63,7 +66,7 @@ const Navbar = () => {
                   className={`flex items-center gap-1 ${
                     location.pathname === "/dashboard"
                       ? "text-blue-600"
-                      : "text-gray-700"
+                      : "text-gray-700 dark:text-gray-300"
                   } hover:text-blue-600 font-medium`}
                 >
                   <LayoutDashboard size={18} /> Dashboard
@@ -74,7 +77,7 @@ const Navbar = () => {
                   className={`flex items-center gap-1 ${
                     location.pathname === "/properties"
                       ? "text-blue-600"
-                      : "text-gray-700"
+                      : "text-gray-700 dark:text-gray-300"
                   } hover:text-blue-600 font-medium`}
                 >
                   All Properties
@@ -89,7 +92,7 @@ const Navbar = () => {
                       className={`flex items-center gap-1 ${
                         location.pathname === "/add-property"
                           ? "text-blue-600"
-                          : "text-gray-700"
+                          : "text-gray-700 dark:text-gray-300"
                       } hover:text-blue-600 font-medium`}
                     >
                       <PlusCircle size={18} /> Add Property
@@ -100,7 +103,7 @@ const Navbar = () => {
                       className={`flex items-center gap-1 ${
                         location.pathname === "/my-listings"
                           ? "text-blue-600"
-                          : "text-gray-700"
+                          : "text-gray-700 dark:text-gray-300"
                       } hover:text-blue-600 font-medium`}
                     >
                       <List size={18} /> My Listings
@@ -115,6 +118,9 @@ const Navbar = () => {
                 >
                   <LogOut size={18} /> Logout
                 </button>
+                
+                {/* Theme Toggle for logged-in users */}
+                <ThemeToggle />
               </>
             )}
           </div>
@@ -179,6 +185,14 @@ const Navbar = () => {
             </>
           )}
 
+          {/* Theme Toggle */}
+          <div className="relative group flex flex-col items-center">
+            <ThemeToggle />
+            <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+              Theme
+            </span>
+          </div>
+
           {/* Logout */}
           <div className="relative group flex flex-col items-center">
             <button
@@ -191,6 +205,13 @@ const Navbar = () => {
               Logout
             </span>
           </div>
+        </div>
+      )}
+
+      {/* --- Mobile Theme Toggle for Guests --- */}
+      {!user && (
+        <div className="md:hidden fixed bottom-4 right-4 z-50">
+          <ThemeToggle />
         </div>
       )}
     </>
