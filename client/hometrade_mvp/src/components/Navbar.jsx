@@ -126,6 +126,129 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+
+      {/* --- Mobile Bottom Bar with Tooltips --- */}
+      {user && (
+        <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 border-t border-gray-300 dark:border-gray-700 flex justify-around py-3 z-50">
+          {/* Home */}
+          <div className="relative group flex flex-col items-center">
+            <Link
+              to="/"
+              className={`flex flex-col items-center ${
+                location.pathname === "/"
+                  ? "text-blue-600 dark:text-purple-400"
+                  : "text-gray-700 dark:text-gray-200"
+              }`}
+            >
+              <Home size={22} />
+            </Link>
+            <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+              Home
+            </span>
+          </div>
+
+          {/* Dashboard */}
+          <div className="relative group flex flex-col items-center">
+            <Link
+              to="/dashboard"
+              className={`flex flex-col items-center ${
+                location.pathname === "/dashboard"
+                  ? "text-blue-600 dark:text-purple-400"
+                  : "text-gray-700 dark:text-gray-200"
+              }`}
+            >
+              <LayoutDashboard size={22} />
+            </Link>
+            <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+              Dashboard
+            </span>
+          </div>
+
+          {/* All Properties */}
+          <div className="relative group flex flex-col items-center">
+            <Link
+              to="/properties"
+              className={`flex flex-col items-center ${
+                location.pathname === "/properties"
+                  ? "text-blue-600 dark:text-purple-400"
+                  : "text-gray-700 dark:text-gray-200"
+              }`}
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+              </svg>
+            </Link>
+            <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+              All Properties
+            </span>
+          </div>
+
+          {/* Seller-only Buttons */}
+          {user.role === "seller" && (
+            <>
+              <div className="relative group flex flex-col items-center">
+                <Link
+                  to="/add-property"
+                  className={`flex flex-col items-center ${
+                    location.pathname === "/add-property"
+                      ? "text-blue-600 dark:text-purple-400"
+                      : "text-gray-700 dark:text-gray-200"
+                  }`}
+                >
+                  <PlusCircle size={22} />
+                </Link>
+                <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+                  Add Property
+                </span>
+              </div>
+
+              <div className="relative group flex flex-col items-center">
+                <Link
+                  to="/my-listings"
+                  className={`flex flex-col items-center ${
+                    location.pathname === "/my-listings"
+                      ? "text-blue-600 dark:text-purple-400"
+                      : "text-gray-700 dark:text-gray-200"
+                  }`}
+                >
+                  <List size={22} />
+                </Link>
+                <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+                  My Listings
+                </span>
+              </div>
+            </>
+          )}
+
+          {/* Theme Toggle */}
+          <div className="relative group flex flex-col items-center">
+            <ThemeToggle />
+            <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+              Theme
+            </span>
+          </div>
+
+          {/* Logout */}
+          <div className="relative group flex flex-col items-center">
+            <button
+              onClick={handleLogout}
+              className="flex flex-col items-center text-red-600"
+            >
+              <LogOut size={22} />
+            </button>
+            <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+              Logout
+            </span>
+          </div>
+        </div>
+      )}
+
+      {/* --- Mobile Theme Toggle for Guests --- */}
+      {!user && (
+        <div className="md:hidden fixed bottom-4 right-4 z-50">
+          <ThemeToggle />
+        </div>
+      )}
     </>
   );
 };
