@@ -24,7 +24,7 @@ export default function ThemeToggle() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.2 }}
-            className={`absolute top-12 left-1/2 -translate-x-1/2 px-2 py-1 rounded text-xs shadow-lg whitespace-nowrap ${
+            className={`absolute top-16 left-[-100%] -translate-x-1/2 px-2 py-1 rounded text-xs shadow-lg whitespace-nowrap ${
               theme === "dark"
                 ? "bg-gray-800 text-purple-300"
                 : "bg-gray-100 text-blue-600"
