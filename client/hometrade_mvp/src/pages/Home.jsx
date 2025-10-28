@@ -82,7 +82,7 @@ const Home = () => {
         <div className="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
           <div className="text-center">
             <div className="overflow-hidden whitespace-nowrap mb-4">
-              <p className="inline-block animate-marquee text-gray-600 dark:text-gray-400 text-xl">
+              <p className="inline-block animate-marquee text-gray-600 dark:text-gray-400 uppercase text-xl">
                 Be the first to know when we launch • Revolutionary real estate platform • Join the future of property trading • Be the first to know when we launch • Revolutionary real estate platform • Join the future of property trading • 
               </p>
             </div>
