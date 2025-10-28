@@ -68,17 +68,41 @@ const AllProperties = () => {
   //   setFiltered(allListings);
   // }, []);
 
-  // 🌐 Load listings from JSON Server API
+  // 🌐 Load listings from JSON Server API (COMMENTED OUT FOR GITHUB PAGES DEPLOYMENT)
+  // useEffect(() => {
+  //   fetch('http://localhost:3001/properties')
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setListings(data);
+  //       setFiltered(data);
+  //     })
+  //     .catch(err => {
+  //       console.error('Error fetching properties:', err);
+  //       // Fallback to localStorage if API fails
+  //       const allKeys = Object.keys(localStorage);
+  //       const allListings = [];
+  //       allKeys.forEach((key) => {
+  //         if (key.startsWith("listings_")) {
+  //           const data = JSON.parse(localStorage.getItem(key)) || [];
+  //           allListings.push(...data);
+  //         }
+  //       });
+  //       setListings(allListings);
+  //       setFiltered(allListings);
+  //     });
+  // }, []);
+
+  // 📦 Load listings from static JSON file (FOR GITHUB PAGES DEPLOYMENT)
   useEffect(() => {
-    fetch('http://localhost:3001/properties')
+    fetch('/home-trade-MVP-app/db.json')
       .then(res => res.json())
       .then(data => {
-        setListings(data);
-        setFiltered(data);
+        setListings(data.properties);
+        setFiltered(data.properties);
       })
       .catch(err => {
-        console.error('Error fetching properties:', err);
-        // Fallback to localStorage if API fails
+        console.error('Error fetching static properties:', err);
+        // Fallback to localStorage if static file fails
         const allKeys = Object.keys(localStorage);
         const allListings = [];
         allKeys.forEach((key) => {

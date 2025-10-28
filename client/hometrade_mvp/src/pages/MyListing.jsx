@@ -8,24 +8,24 @@ const MyListings = () => {
 
   useEffect(() => {
     if (user?.email) {
-      // 💾 Load from localStorage (commented out)
-      // const key = `listings_${user.email}`;
-      // const savedListings = JSON.parse(localStorage.getItem(key)) || [];
-      // setListings(savedListings);
+      // 💾 Load from localStorage (RESTORED FOR GITHUB PAGES DEPLOYMENT)
+      const key = `listings_${user.email}`;
+      const savedListings = JSON.parse(localStorage.getItem(key)) || [];
+      setListings(savedListings);
 
-      // 🌐 Load from JSON Server API - filter by user email
-      fetch(`http://localhost:3001/properties?ownerEmail=${user.email}`)
-        .then(res => res.json())
-        .then(data => {
-          setListings(data);
-        })
-        .catch(err => {
-          console.error('Error fetching user properties:', err);
-          // Fallback to localStorage if API fails
-          const key = `listings_${user.email}`;
-          const savedListings = JSON.parse(localStorage.getItem(key)) || [];
-          setListings(savedListings);
-        });
+      // 🌐 Load from JSON Server API - filter by user email (COMMENTED OUT FOR GITHUB PAGES DEPLOYMENT)
+      // fetch(`http://localhost:3001/properties?ownerEmail=${user.email}`)
+      //   .then(res => res.json())
+      //   .then(data => {
+      //     setListings(data);
+      //   })
+      //   .catch(err => {
+      //     console.error('Error fetching user properties:', err);
+      //     // Fallback to localStorage if API fails
+      //     const key = `listings_${user.email}`;
+      //     const savedListings = JSON.parse(localStorage.getItem(key)) || [];
+      //     setListings(savedListings);
+      //   });
     }
   }, [user]);
 

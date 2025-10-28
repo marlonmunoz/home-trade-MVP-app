@@ -15,7 +15,7 @@ import Footer from "../components/Footer";
 
 const AppRoutes = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/home-trade-MVP-app">
             <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors flex flex-col">
                 <Navbar />
                 <main className="flex-1">
