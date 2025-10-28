@@ -210,12 +210,12 @@ const Dashboard = () => {
           </div>
         )}
 
-        <button
+        {/* <button
           onClick={logout}
           className="mt-10 text-red-500 font-semibold hover:underline"
         >
           Logout
-        </button>
+        </button> */}
       </div>
     </div>
   );

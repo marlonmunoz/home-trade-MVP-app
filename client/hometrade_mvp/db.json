@@ -1,0 +1,114 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "Modern Downtown Apartment",
+      "city": "New York",
+      "price": "350000",
+      "bedrooms": "2",
+      "propertyType": "apartment",
+      "description": "Stunning modern apartment in the heart of downtown. Features floor-to-ceiling windows, hardwood floors, and top-of-the-line appliances. Walking distance to subway and major attractions.",
+      "imageUrl": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400&h=250&fit=crop",
+      "ownerEmail": "seller1@example.com"
+    },
+    {
+      "id": 2,
+      "title": "Charming Victorian House",
+      "city": "San Francisco",
+      "price": "875000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Beautiful Victorian-style house with original details preserved. Features a spacious garden, updated kitchen, and stunning city views. Perfect for families looking for character and charm.",
+      "imageUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=250&fit=crop",
+      "ownerEmail": "seller2@example.com"
+    },
+    {
+      "id": 3,
+      "title": "Luxury Beachfront Condo",
+      "city": "Miami",
+      "price": "520000",
+      "bedrooms": "3",
+      "propertyType": "condo",
+      "description": "Breathtaking ocean views from this luxury beachfront condominium. Resort-style amenities including pool, gym, and spa. Modern finishes throughout with private balcony.",
+      "imageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=250&fit=crop",
+      "ownerEmail": "seller3@example.com"
+    },
+    {
+      "id": 4,
+      "title": "Cozy Studio Apartment",
+      "city": "Austin",
+      "price": "185000",
+      "bedrooms": "1",
+      "propertyType": "apartment",
+      "description": "Perfect starter home or investment property. Compact yet functional studio in a vibrant neighborhood. Close to restaurants, cafes, and public transportation.",
+      "imageUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=250&fit=crop",
+      "ownerEmail": "seller1@example.com"
+    },
+    {
+      "id": 5,
+      "title": "Suburban Family Home",
+      "city": "Phoenix",
+      "price": "425000",
+      "bedrooms": "5",
+      "propertyType": "house",
+      "description": "Spacious family home in quiet suburban neighborhood. Large backyard perfect for entertaining, attached garage, and excellent school district. Move-in ready condition.",
+      "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=250&fit=crop",
+      "ownerEmail": "seller4@example.com"
+    },
+    {
+      "id": 6,
+      "title": "Urban Loft Conversion",
+      "city": "Chicago",
+      "price": "295000",
+      "bedrooms": "2",
+      "propertyType": "condo",
+      "description": "Industrial chic loft in converted warehouse. High ceilings, exposed brick walls, and modern amenities. Located in trendy arts district with galleries and restaurants nearby.",
+      "imageUrl": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=250&fit=crop",
+      "ownerEmail": "seller2@example.com"
+    },
+    {
+      "id": 7,
+      "title": "Mountain View Cabin",
+      "city": "Denver",
+      "price": "380000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Rustic cabin with modern updates and stunning mountain views. Perfect for outdoor enthusiasts. Features wood-burning fireplace, large deck, and easy access to hiking trails.",
+      "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop",
+      "ownerEmail": "seller5@example.com"
+    },
+    {
+      "id": 8,
+      "title": "Historic Brownstone",
+      "city": "Boston",
+      "price": "695000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Beautifully restored 19th-century brownstone in prestigious neighborhood. Original architectural details combined with modern conveniences. Private garden and parking space included.",
+      "imageUrl": "https://images.unsplash.com/photo-1448630360428-65456885c650?w=400&h=250&fit=crop",
+      "ownerEmail": "seller3@example.com"
+    },
+    {
+      "id": 9,
+      "title": "Penthouse Suite",
+      "city": "Seattle",
+      "price": "750000",
+      "bedrooms": "3",
+      "propertyType": "condo",
+      "description": "Luxury penthouse with panoramic city and water views. Floor-to-ceiling windows, private elevator access, and rooftop terrace. Premium building amenities and concierge service.",
+      "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop",
+      "ownerEmail": "seller4@example.com"
+    },
+    {
+      "id": 10,
+      "title": "Garden Apartment",
+      "city": "Portland",
+      "price": "275000",
+      "bedrooms": "2",
+      "propertyType": "apartment",
+      "description": "Ground-floor apartment with private garden access. Recently renovated with eco-friendly features. Great natural light and close to public transportation and bike paths.",
+      "imageUrl": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=250&fit=crop",
+      "ownerEmail": "seller5@example.com"
+    }
+  ]
+}
