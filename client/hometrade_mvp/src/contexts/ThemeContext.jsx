@@ -6,21 +6,21 @@ const ThemeContext = createContext();
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState("dark");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [pulseOrigin, setPulseOrigin] = useState({ x: "50%", y: "50%" }); // center by default
 
-  // 🧠 Detect stored or system theme on mount
+  // 🧠 Detect saved or system theme
   useEffect(() => {
     const saved = localStorage.getItem("theme");
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     setTheme(saved || (systemDark ? "dark" : "light"));
 
-    // 🔄 Listen for OS theme changes
     const mql = window.matchMedia("(prefers-color-scheme: dark)");
     const handler = (e) => !saved && setTheme(e.matches ? "dark" : "light");
     mql.addEventListener("change", handler);
     return () => mql.removeEventListener("change", handler);
   }, []);
 
-  // 🎨 Apply and remember theme
+  // 🎨 Apply theme
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
     document.body.style.backgroundColor = theme === "dark" ? "#111827" : "#ffffff";
@@ -28,33 +28,63 @@ export function ThemeProvider({ children }) {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  // 🌗 Fade cross-transition
-  const toggleTheme = () => {
+  // ⚡ Triggered by ThemeToggle
+  const triggerThemeTransition = (x, y) => {
+    setPulseOrigin({ x, y });
     setIsTransitioning(true);
+
     setTimeout(() => {
       setTheme((prev) => (prev === "light" ? "dark" : "light"));
-      setTimeout(() => setIsTransitioning(false), 400);
-    }, 150);
+      setTimeout(() => setIsTransitioning(false), 600);
+    }, 200);
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {/* ✨ Gradient overlay for theme crossfade */}
+    <ThemeContext.Provider value={{ theme, triggerThemeTransition }}>
+      {/* 🌈 Overlay and energy pulse */}
       <AnimatePresence>
         {isTransitioning && (
-          <motion.div
-            key="theme-fade"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-            className={`
-              fixed inset-0 z-[9999] pointer-events-none 
-              bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-900
-              dark:from-purple-900 dark:via-blue-800 dark:to-gray-900
-              opacity-90 blur-sm
-            `}
-          />
+          <>
+            {/* Fade gradient overlay */}
+            <motion.div
+              key="theme-gradient"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.9 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className={`
+                fixed inset-0 z-[9998] pointer-events-none 
+                bg-gradient-to-br from-blue-500 via-purple-600 to-indigo-900
+                dark:from-purple-900 dark:via-blue-800 dark:to-gray-900
+                blur-sm
+              `}
+            />
+
+            {/* Energy pulse originating from toggle */}
+            <motion.div
+              key="glow-pulse"
+              initial={{ scale: 0, opacity: 0.6 }}
+              animate={{
+                scale: [0, 1.2, 2.5],
+                opacity: [0.6, 0.3, 0],
+              }}
+              transition={{
+                duration: 1.4,
+                ease: "easeOut",
+              }}
+              style={{
+                left: pulseOrigin.x,
+                top: pulseOrigin.y,
+                transform: "translate(-50%, -50%)",
+              }}
+              className={`
+                fixed rounded-full w-[200vw] h-[200vw]
+                bg-gradient-radial from-blue-400/40 via-purple-500/25 to-transparent
+                dark:from-purple-700/30 dark:via-blue-400/20 dark:to-transparent
+                blur-3xl z-[9999]
+              `}
+            />
+          </>
         )}
       </AnimatePresence>
 
