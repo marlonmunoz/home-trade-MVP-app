@@ -41,7 +41,7 @@ const Home = () => {
     setTimeout(() => {
       setIsSubmitted(false);
       setMessage("");
-    }, 3000);
+    }, 5000);
   };
 
   return (
