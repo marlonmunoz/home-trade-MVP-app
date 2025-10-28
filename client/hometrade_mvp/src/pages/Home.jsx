@@ -113,7 +113,7 @@ const Home = () => {
               </button>
               
               {/* Login Button - Visible on all screens */}
-              <button
+              {/* <button
                 onClick={() => navigate("/login")}
                 className="bg-transparent border-2 border-blue-500 dark:border-purple-500 
                            text-blue-600 dark:text-purple-400 font-semibold 
@@ -123,7 +123,7 @@ const Home = () => {
                            w-full sm:w-auto min-w-[200px]"
               >
                 Login
-              </button>
+              </button> */}
             </div>
             
             {/* Additional Info for Mobile */}
