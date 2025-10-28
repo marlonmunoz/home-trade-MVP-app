@@ -18,14 +18,13 @@ const AddProperty = () => {
 
   const [message, setMessage] = useState("");
 
-  // ✅ Fix: Redirect inside useEffect
+  // ✅ Redirect if not seller
   useEffect(() => {
     if (!user || user.role !== "seller") {
       navigate("/login");
     }
   }, [user, navigate]);
 
-  // stop rendering form while redirecting
   if (!user || user.role !== "seller") return null;
 
   const handleChange = (e) =>
@@ -52,7 +51,7 @@ const AddProperty = () => {
 
   return (
     <div className="container mx-auto px-4 py-10 max-w-xl">
-      <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">
+      <h1 className="text-3xl font-bold text-blue-600 dark:text-purple-400 mb-6 text-center">
         Add New Property
       </h1>
 
@@ -69,7 +68,7 @@ const AddProperty = () => {
           value={form.title}
           onChange={handleChange}
           required
-          className="border rounded w-full p-2"
+          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
         />
         <input
           name="city"
@@ -77,7 +76,7 @@ const AddProperty = () => {
           value={form.city}
           onChange={handleChange}
           required
-          className="border rounded w-full p-2"
+          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
         />
         <input
           name="price"
@@ -85,20 +84,20 @@ const AddProperty = () => {
           value={form.price}
           onChange={handleChange}
           required
-          className="border rounded w-full p-2"
+          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
         />
         <input
           name="bedrooms"
           placeholder="Bedrooms"
           value={form.bedrooms}
           onChange={handleChange}
-          className="border rounded w-full p-2"
+          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
         />
         <select
           name="propertyType"
           value={form.propertyType}
           onChange={handleChange}
-          className="border rounded w-full p-2"
+          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
         >
           <option value="house">House</option>
           <option value="apartment">Apartment</option>
@@ -109,7 +108,7 @@ const AddProperty = () => {
           placeholder="Description"
           value={form.description}
           onChange={handleChange}
-          className="border rounded w-full p-2"
+          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
           rows="3"
         />
         <input
@@ -117,11 +116,18 @@ const AddProperty = () => {
           placeholder="Image URL (optional)"
           value={form.imageUrl}
           onChange={handleChange}
-          className="border rounded w-full p-2"
+          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
         />
+
+        {/* 🌈 Animated Gradient Submit Button */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="w-full bg-button-gradient bg-[length:200%_200%] animate-gradientFlow 
+                     text-white py-2 rounded font-semibold 
+                     transition-all duration-300 hover:scale-[1.03] 
+                     hover:shadow-[0_0_14px_rgba(139,92,246,0.6)] 
+                     focus:ring-2 focus:ring-offset-2 focus:ring-pink-400 
+                     dark:focus:ring-purple-500"
         >
           Add Property
         </button>

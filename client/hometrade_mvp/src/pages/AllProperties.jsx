@@ -1,6 +1,9 @@
-import React, { useEffect, useState, useRef } from "react"; // 🆕 added useRef
+import React, { useEffect, useState, useRef } from "react";
+import { ArrowUp } from "lucide-react";
+import { useTheme } from "../contexts/ThemeContext";
 
 const AllProperties = () => {
+  const { theme } = useTheme();
   const [listings, setListings] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [search, setSearch] = useState("");
@@ -12,28 +15,44 @@ const AllProperties = () => {
     city: "",
   });
 
-  const [showFilterBar, setShowFilterBar] = useState(true); // 🆕 for show/hide animation
-  const lastScrollY = useRef(0); // 🆕 keep track of scroll direction
+  const [showFilterBar, setShowFilterBar] = useState(true);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [pulse, setPulse] = useState(false);
 
-  // 🆕 Scroll listener to toggle filter bar
+  const lastScrollY = useRef(0);
+
+  // 🧭 Scroll handling
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (currentScrollY / scrollHeight) * 100;
+      setScrollProgress(scrollPercent);
+
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-        // scrolling down
         setShowFilterBar(false);
       } else {
-        // scrolling up
         setShowFilterBar(true);
       }
+
+      setShowScrollTop(currentScrollY > 500);
       lastScrollY.current = currentScrollY;
+
+      // 🎉 Trigger pulse when reaching 100%
+      if (scrollPercent >= 99.5 && !pulse) {
+        setPulse(true);
+        setTimeout(() => setPulse(false), 1500);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pulse]);
 
-  // Load listings
+  // 🏠 Load listings from localStorage
   useEffect(() => {
     const allKeys = Object.keys(localStorage);
     const allListings = [];
@@ -49,7 +68,7 @@ const AllProperties = () => {
     setFiltered(allListings);
   }, []);
 
-  // Filtering logic
+  // 🔍 Filtering logic
   useEffect(() => {
     let filteredResults = listings;
 
@@ -98,34 +117,97 @@ const AllProperties = () => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
   };
 
+  const handleReset = () => {
+    setFilters({
+      propertyType: "",
+      bedrooms: "",
+      minPrice: "",
+      maxPrice: "",
+      city: "",
+    });
+    setSearch("");
+    setFiltered(listings);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">
+    <div className="container mx-auto px-4 py-10 relative">
+      {/* 🌈 Scroll Progress Bar with gradient + pulse */}
+      <div
+        className={`fixed top-0 left-0 h-1 z-50 transition-all duration-200 ease-out
+          ${pulse ? "animate-glowPulse" : ""}
+          ${
+            theme === "dark"
+              ? "bg-[linear-gradient(90deg,#8b5cf6,#ec4899,#3b82f6,#8b5cf6)]"
+              : "bg-[linear-gradient(90deg,#3b82f6,#8b5cf6,#ec4899,#3b82f6)]"
+          }
+          bg-[length:200%_200%] animate-gradientFlow`}
+        style={{ width: `${scrollProgress}%` }}
+      ></div>
+
+      {/* 🧮 Floating Percentage Label */}
+      <div
+        className="fixed top-2 z-50 flex flex-col items-center transition-opacity duration-300"
+        style={{
+          left: `${Math.min(scrollProgress, 96)}%`,
+          opacity: scrollProgress > 2 && scrollProgress < 98 ? 1 : 0,
+          transform: "translateX(-50%)",
+        }}
+        onMouseEnter={() => setShowTooltip(true)}
+        onMouseLeave={() => setShowTooltip(false)}
+      >
+        <span
+          className={`text-xs font-bold px-2 py-1 rounded shadow-md ${
+            theme === "dark"
+              ? "bg-purple-600 text-white"
+              : "bg-blue-500 text-white"
+          }`}
+        >
+          {Math.round(scrollProgress)}%
+        </span>
+
+        {showTooltip && (
+          <div
+            className={`absolute top-6 text-xs px-2 py-1 rounded opacity-90 shadow-md transition-opacity duration-200 ${
+              theme === "dark"
+                ? "bg-gray-700 text-purple-300"
+                : "bg-gray-200 text-blue-600"
+            }`}
+          >
+            {scrollProgress >= 99
+              ? "🎉 You've reached the end!"
+              : `Scrolled ${Math.round(scrollProgress)}% of page`}
+          </div>
+        )}
+      </div>
+
+      <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center dark:text-purple-400">
         All Properties
       </h1>
 
-      {/* 🆕 Sticky + Animated Filter Bar */}
+      {/* 🔧 Sticky Filter Bar */}
       <div
-        className={`bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 mb-8 flex flex-wrap gap-3 justify-center
-          sticky top-0 z-40 backdrop-blur-md bg-opacity-90 dark:bg-opacity-90 
-          transition-transform duration-500 ease-in-out 
-          ${showFilterBar ? "translate-y-0" : "-translate-y-full"}`}
+        className={`bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 mb-8 flex flex-wrap gap-3 justify-center sticky top-0 z-40 backdrop-blur-md bg-opacity-90 dark:bg-opacity-90 transition-transform duration-500 ease-in-out ${
+          showFilterBar ? "translate-y-0" : "-translate-y-full"
+        }`}
       >
-        {/* 🔍 Search bar */}
         <input
           type="text"
           placeholder="Search by title or city"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border p-2 rounded w-full sm:w-1/4"
+          className="border p-2 rounded w-full sm:w-1/4 dark:bg-gray-700 dark:text-white"
         />
 
-        {/* 🏠 Property type filter */}
         <select
           name="propertyType"
           value={filters.propertyType}
           onChange={handleChange}
-          className="border p-2 rounded w-full sm:w-1/5"
+          className="border p-2 rounded w-full sm:w-1/5 dark:bg-gray-700 dark:text-white"
         >
           <option value="">All Types</option>
           <option value="house">House</option>
@@ -133,12 +215,11 @@ const AllProperties = () => {
           <option value="condo">Condo</option>
         </select>
 
-        {/* 🛏 Bedrooms filter */}
         <select
           name="bedrooms"
           value={filters.bedrooms}
           onChange={handleChange}
-          className="border p-2 rounded w-full sm:w-1/6"
+          className="border p-2 rounded w-full sm:w-1/6 dark:bg-gray-700 dark:text-white"
         >
           <option value="">Any Bedrooms</option>
           <option value="1">1+</option>
@@ -148,14 +229,13 @@ const AllProperties = () => {
           <option value="5">5+</option>
         </select>
 
-        {/* 💰 Min and Max Price */}
         <input
           type="number"
           name="minPrice"
           value={filters.minPrice}
           onChange={handleChange}
           placeholder="Min Price"
-          className="border p-2 rounded w-full sm:w-1/6"
+          className="border p-2 rounded w-full sm:w-1/6 dark:bg-gray-700 dark:text-white"
         />
         <input
           type="number"
@@ -163,11 +243,23 @@ const AllProperties = () => {
           value={filters.maxPrice}
           onChange={handleChange}
           placeholder="Max Price"
-          className="border p-2 rounded w-full sm:w-1/6"
+          className="border p-2 rounded w-full sm:w-1/6 dark:bg-gray-700 dark:text-white"
         />
+
+        {/* 🌈 Gradient Reset Button */}
+        <button
+          onClick={handleReset}
+          className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
+                     text-white font-medium px-4 py-2 rounded shadow-md
+                     hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]
+                     transition-all duration-300 focus:ring-2 focus:ring-offset-2
+                     focus:ring-pink-400 dark:focus:ring-purple-500"
+        >
+          Reset Filters
+        </button>
       </div>
 
-      {/* 🏡 Filtered Results */}
+      {/* 🏡 Property Cards */}
       {filtered.length === 0 ? (
         <p className="text-center text-gray-500">
           No properties match your filters.
@@ -186,7 +278,7 @@ const AllProperties = () => {
                   className="w-full h-48 object-cover rounded mb-3"
                   onError={(e) => {
                     e.target.src =
-                      "https://via.placeholder.com/400x250?text=No+Image";
+                      'https://via.placeholder.com/400x250?text=No+Image';
                   }}
                 />
               ) : (
@@ -196,7 +288,7 @@ const AllProperties = () => {
                   className="w-full h-48 object-cover rounded mb-3"
                 />
               )}
-              <h2 className="text-xl font-semibold mb-1 text-blue-600">
+              <h2 className="text-xl font-semibold mb-1 text-blue-600 dark:text-purple-400">
                 {p.title}
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
@@ -217,6 +309,23 @@ const AllProperties = () => {
           ))}
         </div>
       )}
+
+      {/* ⬆️ Back-to-Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-6 right-6 text-white p-3 rounded-full shadow-lg 
+          transition-all transform hover:scale-110 ${
+            theme === "dark"
+              ? "bg-[linear-gradient(90deg,#8b5cf6,#ec4899,#3b82f6,#8b5cf6)]"
+              : "bg-[linear-gradient(90deg,#3b82f6,#8b5cf6,#ec4899,#3b82f6)]"
+          } bg-[length:200%_200%] animate-gradientFlow ${
+          showScrollTop
+            ? "opacity-100 visible animate-bounceOnce"
+            : "opacity-0 invisible pointer-events-none"
+        } duration-500 ease-in-out hover:shadow-[0_0_16px_rgba(139,92,246,0.7)]`}
+      >
+        <ArrowUp size={22} />
+      </button>
     </div>
   );
 };

@@ -32,7 +32,9 @@ const Dashboard = () => {
           </p>
           <button
             onClick={handleLoginRedirect}
-            className="mt-4 px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            className="mt-4 px-6 py-2 bg-button-gradient bg-[length:200%_200%] animate-gradientFlow 
+                       text-white rounded hover:scale-[1.03] transition-all 
+                       hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]"
           >
             Go to Login
           </button>
@@ -44,11 +46,12 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
       <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="text-3xl font-bold text-blue-600 mb-4">
+        <h1 className="text-3xl font-bold text-blue-600 dark:text-purple-400 mb-4">
           Welcome back, {user.name.split(" ")[0]} 👋
         </h1>
         <p className="text-gray-600 dark:text-gray-300 mb-6">
-          You're logged in as a <span className="font-semibold">{user.role}</span>.
+          You're logged in as a{" "}
+          <span className="font-semibold">{user.role}</span>.
         </p>
 
         {onboardingData ? (
@@ -70,7 +73,10 @@ const Dashboard = () => {
             </p>
             <button
               onClick={() => navigate("/onboarding")}
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+              className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow 
+                         text-white px-4 py-2 rounded 
+                         hover:scale-[1.03] transition-all 
+                         hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]"
             >
               Complete Onboarding
             </button>

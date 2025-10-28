@@ -16,14 +16,17 @@ const MyListings = () => {
 
   return (
     <div className="container mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold text-blue-600 mb-6 text-center">
+      <h1 className="text-3xl font-bold text-blue-600 dark:text-purple-400 mb-6 text-center">
         My Listings
       </h1>
 
       {listings.length === 0 ? (
-        <p className="text-center text-gray-500">
+        <p className="text-center text-gray-600 dark:text-gray-300">
           You haven’t added any properties yet.{" "}
-          <Link to="/add-property" className="text-blue-500 hover:underline">
+          <Link
+            to="/add-property"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 font-semibold hover:underline"
+          >
             Add one now
           </Link>
           .
@@ -33,9 +36,12 @@ const MyListings = () => {
           {listings.map((p) => (
             <div
               key={p.id}
-              className="border rounded-lg shadow hover:shadow-lg transition p-4 bg-white dark:bg-gray-800"
+              className="border rounded-xl shadow hover:shadow-xl transition-all duration-300 
+                         p-4 bg-white dark:bg-gray-800 hover:scale-[1.02] hover:border-transparent 
+                         hover:bg-gradient-to-r hover:from-blue-50 hover:to-pink-50 
+                         dark:hover:from-gray-800 dark:hover:to-purple-900/20"
             >
-              {/* ✅ Robust image rendering with fallback */}
+              {/* 🖼 Robust image rendering with fallback */}
               {p.imageUrl?.trim() ? (
                 <img
                   src={p.imageUrl.trim()}
@@ -54,12 +60,14 @@ const MyListings = () => {
                 />
               )}
 
-              <h2 className="text-xl font-semibold mb-1 text-blue-600">
+              <h2 className="text-xl font-semibold mb-1 text-blue-600 dark:text-purple-400">
                 {p.title}
               </h2>
+
               <p className="text-gray-600 dark:text-gray-300">
                 {p.propertyType} in {p.city}
               </p>
+
               <p className="text-gray-700 dark:text-gray-200 font-bold mt-2">
                 ${p.price}
               </p>
@@ -74,13 +82,16 @@ const MyListings = () => {
                 {p.description}
               </p>
 
-              {/* Future step: Add "View Details" */}
-              {/* <Link
-                to={`/property/${p.id}`}
-                className="text-blue-500 hover:underline text-sm mt-2 inline-block"
+              {/* 🌈 Gradient Action Button */}
+              <Link
+                to="/add-property"
+                className="mt-4 inline-block bg-button-gradient bg-[length:200%_200%] animate-gradientFlow 
+                           text-white text-sm font-semibold px-4 py-2 rounded 
+                           hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)] 
+                           transition-all duration-300"
               >
-                View Details →
-              </Link> */}
+                + Add Another Property
+              </Link>
             </div>
           ))}
         </div>

@@ -5,7 +5,6 @@ import { useAuth } from "../contexts/AuthContext";
 const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
-
   const [form, setForm] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -21,18 +20,14 @@ const Login = () => {
         id: 1,
         name: "John Doe",
         email: form.email,
-        role: "buyer", // You can change this manually to "seller" to test role-based Navbar
+        role: "buyer",
       };
-
-      // ✅ Show success message
       setSuccess(true);
       setError("");
-
-      // ✅ Simulate backend delay before navigating
       setTimeout(() => {
         login(mockUser, "fake-jwt-token");
         navigate("/dashboard");
-      }, 1500); // 1.5s delay
+      }, 1500);
     } else {
       setError("Invalid credentials. Please check your email and password.");
     }
@@ -45,11 +40,10 @@ const Login = () => {
           onSubmit={handleSubmit}
           className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 w-full max-w-md transition-all duration-500"
         >
-          <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
+          <h2 className="text-2xl font-bold mb-6 text-center text-blue-600 dark:text-purple-400">
             Login
           </h2>
 
-          {/* ✅ Feedback Messages */}
           {error && (
             <p className="text-red-500 text-center mb-3 font-medium">{error}</p>
           )}
@@ -68,7 +62,6 @@ const Login = () => {
             disabled={success}
             className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 mb-3 text-gray-800 dark:text-white"
           />
-
           <input
             type="password"
             name="password"
@@ -79,11 +72,14 @@ const Login = () => {
             className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 mb-4 text-gray-800 dark:text-white"
           />
 
+          {/* 🌈 Gradient Login Button */}
           <button
             type="submit"
             disabled={success}
             className={`w-full ${
-              success ? "bg-green-500" : "bg-blue-600 hover:bg-blue-700"
+              success
+                ? "bg-green-500"
+                : "bg-button-gradient bg-[length:200%_200%] animate-gradientFlow hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]"
             } text-white py-2 rounded transition-all duration-300`}
           >
             {success ? "Redirecting..." : "Login"}

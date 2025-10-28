@@ -33,15 +33,14 @@ const Register = () => {
       role: form.role,
     };
 
-    // ✅ Show success message first
+    // ✅ Success visual feedback
     setSuccess(true);
     setError("");
 
-    // ✅ Simulate a brief delay (like waiting for backend)
     setTimeout(() => {
       login(newUser, "fake-jwt-token");
       navigate("/onboarding");
-    }, 1500); // 1.5 seconds delay
+    }, 1500);
   };
 
   return (
@@ -51,11 +50,11 @@ const Register = () => {
           onSubmit={handleSubmit}
           className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-8 w-full max-w-md transition-all duration-500"
         >
-          <h2 className="text-2xl font-bold mb-6 text-center text-blue-600">
+          <h2 className="text-2xl font-bold mb-6 text-center text-blue-600 dark:text-purple-400">
             Create Account
           </h2>
 
-          {/* ✅ Show messages */}
+          {/* Messages */}
           {error && (
             <p className="text-red-500 text-center mb-3 font-medium">{error}</p>
           )}
@@ -74,7 +73,6 @@ const Register = () => {
             disabled={success}
             className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 mb-3 text-gray-800 dark:text-white"
           />
-
           <input
             type="email"
             name="email"
@@ -84,7 +82,6 @@ const Register = () => {
             disabled={success}
             className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 mb-3 text-gray-800 dark:text-white"
           />
-
           <input
             type="password"
             name="password"
@@ -94,7 +91,6 @@ const Register = () => {
             disabled={success}
             className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 mb-3 text-gray-800 dark:text-white"
           />
-
           <select
             name="role"
             value={form.role}
@@ -106,23 +102,26 @@ const Register = () => {
             <option value="seller">Seller</option>
           </select>
 
+          {/* 🌈 Gradient Create Account Button */}
           <button
             type="submit"
             disabled={success}
             className={`w-full ${
-              success ? "bg-green-500" : "bg-blue-600 hover:bg-blue-700"
+              success
+                ? "bg-green-500"
+                : "bg-button-gradient bg-[length:200%_200%] animate-gradientFlow hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]"
             } text-white py-2 rounded transition-all duration-300`}
           >
             {success ? "Redirecting..." : "Create Account"}
           </button>
 
-          {/* Link for existing users */}
+          {/* Link */}
           <div className="text-center mt-4">
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               Already have an account?{" "}
               <Link
                 to="/login"
-                className="text-blue-600 hover:text-blue-700 font-medium hover:underline"
+                className="text-blue-600 hover:text-blue-700 font-medium hover:underline dark:text-purple-400"
               >
                 Sign in here
               </Link>
