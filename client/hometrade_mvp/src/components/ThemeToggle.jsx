@@ -24,13 +24,19 @@ export default function ThemeToggle() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.2 }}
-            className={`absolute top-16 left-[-100%] -translate-x-1/2 px-2 py-1 rounded text-xs shadow-lg whitespace-nowrap ${
+            className={`absolute top-16 left-[-100%] -translate-x-1/2 px-3 py-2 rounded-lg text-xs font-medium shadow-xl border whitespace-nowrap z-50 ${
               theme === "dark"
-                ? "bg-gray-800 text-purple-300"
-                : "bg-gray-100 text-blue-600"
+                ? "bg-gray-900 text-white border-gray-700 shadow-black/20"
+                : "bg-white text-gray-800 border-gray-300 shadow-gray-500/20"
             }`}
           >
             {theme === "light" ? "Switch to Dark Mode" : "Switch to Light Mode"}
+            {/* Tooltip Arrow */}
+            <div className={`absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rotate-45 ${
+              theme === "dark" 
+                ? "bg-gray-900 border-l border-t border-gray-700" 
+                : "bg-white border-l border-t border-gray-300"
+            }`}></div>
           </motion.div>
         )}
       </AnimatePresence>
