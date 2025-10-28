@@ -243,10 +243,46 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* --- Mobile Theme Toggle for Guests --- */}
+      {/* --- Mobile Top Bar for Guests --- */}
       {!user && (
-        <div className="md:hidden fixed bottom-4 right-4 z-50">
-          <ThemeToggle />
+        <div className="md:hidden bg-white dark:bg-gray-900 shadow-md p-4">
+          <div className="flex justify-between items-center">
+            <Link
+              to="/"
+              className="text-xl font-bold text-blue-600 hover:text-blue-700 dark:text-purple-400 flex items-center gap-2"
+            >
+              <Home className="w-5 h-5" /> HomeTrade
+            </Link>
+            
+            <div className="flex items-center gap-2">
+              <Link
+                to="/login"
+                className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
+                           text-white font-semibold px-3 py-2 rounded-md shadow-md
+                           hover:scale-[1.03] transition-all duration-300 flex items-center gap-1 text-sm"
+              >
+                <LogIn size={16} /> Login
+              </Link>
+              
+              <Link
+                to="/register"
+                className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
+                           text-white font-semibold px-3 py-2 rounded-md shadow-md
+                           hover:scale-[1.03] transition-all duration-300 flex items-center gap-1 text-sm"
+              >
+                <UserPlus size={16} /> Register
+              </Link>
+              
+              <ThemeToggle />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* --- Mobile Theme Toggle for Guests (when no mobile top bar) --- */}
+      {!user && (
+        <div className="md:hidden fixed top-4 right-4 z-50 lg:hidden">
+          {/* This will be hidden since we now have mobile top bar */}
         </div>
       )}
     </>

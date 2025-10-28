@@ -79,32 +79,59 @@ const Home = () => {
       
       {/* Main Content with Backdrop Blur */}
       <div className="relative z-10 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <div className="overflow-hidden whitespace-nowrap mb-4">
-              <p className="inline-block animate-marquee text-gray-600 dark:text-gray-400 uppercase text-xl">
+        <div className="container mx-auto px-4 py-4 sm:py-8 min-h-screen flex items-center justify-center">
+          <div className="text-center w-full max-w-4xl">
+            {/* Marquee Text - Hidden on very small screens */}
+            <div className="overflow-hidden whitespace-nowrap mb-2 sm:mb-4 hidden sm:block">
+              <p className="inline-block animate-marquee text-gray-600 dark:text-gray-400 uppercase text-sm sm:text-lg md:text-xl">
                 Be the first to know when we launch • Revolutionary real estate platform • Join the future of property trading • Be the first to know when we launch • Revolutionary real estate platform • Join the future of property trading • 
               </p>
             </div>
-            {/* <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-300 via-blue-500 via-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-2xl tracking-wider uppercase font-black mb-4">  */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-300 via-blue-500 via-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-2xl tracking-wider font-black mb-4"> 
+            
+            {/* Main Title - Responsive sizing */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-blue-300 via-blue-500 via-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-2xl tracking-wider font-black mb-4 leading-tight"> 
               HomeTrade TECHNOLOGIES
             </h1>
             
-            <p className="text-gray-400 dark:text-gray-300 text-lg md:text-xl lg:text-1xl mb-8 max-w-2xl mx-auto">
+            {/* Subtitle - Responsive sizing */}
+            <p className="text-gray-400 dark:text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
               YOUR ONLY REAL ESTATE PLATFORM
             </p>
             
-            <button
-              onClick={() => navigate("/register")}
-              className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
-                         text-white font-semibold px-8 py-4 rounded-lg shadow-md
-                         hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]
-                         transition-all duration-300 border border-gray-400 dark:border-white
-                         text-lg md:text-xl"
-            >
-              Get Started
-            </button>
+            {/* Navigation Buttons Container - Responsive layout */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center mb-6 sm:mb-8">
+              {/* Get Started Button */}
+              <button
+                onClick={() => navigate("/register")}
+                className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
+                           text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-md
+                           hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]
+                           transition-all duration-300 border border-gray-400 dark:border-white
+                           text-base sm:text-lg md:text-xl w-full sm:w-auto min-w-[200px]"
+              >
+                Get Started
+              </button>
+              
+              {/* Login Button - Visible on all screens */}
+              <button
+                onClick={() => navigate("/login")}
+                className="bg-transparent border-2 border-blue-500 dark:border-purple-500 
+                           text-blue-600 dark:text-purple-400 font-semibold 
+                           px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-md
+                           hover:bg-blue-50 dark:hover:bg-purple-900/20 hover:scale-[1.03]
+                           transition-all duration-300 text-base sm:text-lg md:text-xl 
+                           w-full sm:w-auto min-w-[200px]"
+              >
+                Login
+              </button>
+            </div>
+            
+            {/* Additional Info for Mobile */}
+            <div className="block sm:hidden">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mb-4">
+                Join the revolutionary real estate platform
+              </p>
+            </div>
           </div>
         </div>
       </div>
