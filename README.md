@@ -7,7 +7,16 @@ Welcome to Home Trade, a real state platform
 3. `nvm use 22`
 4. `npm run dev`
 
-## RUN server
+## RUN server (JSON server for api simulation)
+1. `client/hometrade_mvp`
+2. `json-server --watch db.json --port 3001`
+
+JSON Server started on PORT :3001
+Press CTRL-C to stop
+Watching db.json...
+
+Endpoints:
+`http://localhost:3001/properties`
 
 # Technologies
 - JavaScript
@@ -25,3 +34,4 @@ Welcome to Home Trade, a real state platform
     * sellerj@nothing.com
     * 123456
     * Seller
+
