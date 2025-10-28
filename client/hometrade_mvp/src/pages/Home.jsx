@@ -81,11 +81,12 @@ const Home = () => {
       <div className="relative z-10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-8 min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-300 via-blue-500 via-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-2xl tracking-wider uppercase font-black mb-4">
-              HOMETRADE TECHNOLOGIES
+            {/* <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-300 via-blue-500 via-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-2xl tracking-wider uppercase font-black mb-4">  */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-300 via-blue-500 via-purple-500 via-pink-500 to-red-500 bg-clip-text text-transparent drop-shadow-2xl tracking-wider font-black mb-4"> 
+              HomeTrade TECHNOLOGIES
             </h1>
             
-            <p className="text-gray-600 dark:text-gray-300 text-lg md:text-xl lg:text-1xl mb-8 max-w-2xl mx-auto">
+            <p className="text-gray-400 dark:text-gray-300 text-lg md:text-xl lg:text-1xl mb-8 max-w-2xl mx-auto">
               YOUR ONLY REAL ESTATE PLATFORM
             </p>
             
