@@ -53,19 +53,43 @@ const AllProperties = () => {
   }, [pulse]);
 
   // 🏠 Load listings from localStorage
+  // useEffect(() => {
+  //   const allKeys = Object.keys(localStorage);
+  //   const allListings = [];
+
+  //   allKeys.forEach((key) => {
+  //     if (key.startsWith("listings_")) {
+  //       const data = JSON.parse(localStorage.getItem(key)) || [];
+  //       allListings.push(...data);
+  //     }
+  //   });
+
+  //   setListings(allListings);
+  //   setFiltered(allListings);
+  // }, []);
+
+  // 🌐 Load listings from JSON Server API
   useEffect(() => {
-    const allKeys = Object.keys(localStorage);
-    const allListings = [];
-
-    allKeys.forEach((key) => {
-      if (key.startsWith("listings_")) {
-        const data = JSON.parse(localStorage.getItem(key)) || [];
-        allListings.push(...data);
-      }
-    });
-
-    setListings(allListings);
-    setFiltered(allListings);
+    fetch('http://localhost:3001/properties')
+      .then(res => res.json())
+      .then(data => {
+        setListings(data);
+        setFiltered(data);
+      })
+      .catch(err => {
+        console.error('Error fetching properties:', err);
+        // Fallback to localStorage if API fails
+        const allKeys = Object.keys(localStorage);
+        const allListings = [];
+        allKeys.forEach((key) => {
+          if (key.startsWith("listings_")) {
+            const data = JSON.parse(localStorage.getItem(key)) || [];
+            allListings.push(...data);
+          }
+        });
+        setListings(allListings);
+        setFiltered(allListings);
+      });
   }, []);
 
   // 🔍 Filtering logic
@@ -291,8 +315,11 @@ const AllProperties = () => {
               <h2 className="text-xl font-semibold mb-1 text-blue-600 dark:text-purple-400">
                 {p.title}
               </h2>
-              <p className="text-gray-600 dark:text-gray-300">
-                {p.propertyType} in {p.city}
+              <p className="text-gray-600 dark:text-gray-300 capitalize">
+                {p.propertyType}
+              </p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
+                📍 {p.city}
               </p>
               <p className="text-gray-700 dark:text-gray-200 font-bold mt-2">
                 ${p.price}

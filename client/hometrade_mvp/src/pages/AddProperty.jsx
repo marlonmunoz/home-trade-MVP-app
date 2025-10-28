@@ -39,14 +39,37 @@ const AddProperty = () => {
       ownerEmail: user.email,
     };
 
-    const key = `listings_${user.email}`;
-    const existing = JSON.parse(localStorage.getItem(key)) || [];
-    existing.push(newListing);
-    localStorage.setItem(key, JSON.stringify(existing));
+    // 💾 Save to localStorage (commented out)
+    // const key = `listings_${user.email}`;
+    // const existing = JSON.parse(localStorage.getItem(key)) || [];
+    // existing.push(newListing);
+    // localStorage.setItem(key, JSON.stringify(existing));
 
-    console.log("✅ Saved listing:", newListing);
-    setMessage("✅ Property added successfully!");
-    setTimeout(() => navigate("/my-listings"), 1500);
+    // 🌐 Save to JSON Server API
+    fetch('http://localhost:3001/properties', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newListing),
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log("✅ Saved listing to API:", data);
+      setMessage("✅ Property added successfully!");
+      setTimeout(() => navigate("/my-listings"), 1500);
+    })
+    .catch(err => {
+      console.error('Error saving property:', err);
+      // Fallback to localStorage if API fails
+      const key = `listings_${user.email}`;
+      const existing = JSON.parse(localStorage.getItem(key)) || [];
+      existing.push(newListing);
+      localStorage.setItem(key, JSON.stringify(existing));
+      console.log("✅ Saved listing to localStorage:", newListing);
+      setMessage("✅ Property added successfully!");
+      setTimeout(() => navigate("/my-listings"), 1500);
+    });
   };
 
   return (

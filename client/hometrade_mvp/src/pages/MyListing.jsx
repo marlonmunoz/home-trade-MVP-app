@@ -8,9 +8,24 @@ const MyListings = () => {
 
   useEffect(() => {
     if (user?.email) {
-      const key = `listings_${user.email}`;
-      const savedListings = JSON.parse(localStorage.getItem(key)) || [];
-      setListings(savedListings);
+      // 💾 Load from localStorage (commented out)
+      // const key = `listings_${user.email}`;
+      // const savedListings = JSON.parse(localStorage.getItem(key)) || [];
+      // setListings(savedListings);
+
+      // 🌐 Load from JSON Server API - filter by user email
+      fetch(`http://localhost:3001/properties?ownerEmail=${user.email}`)
+        .then(res => res.json())
+        .then(data => {
+          setListings(data);
+        })
+        .catch(err => {
+          console.error('Error fetching user properties:', err);
+          // Fallback to localStorage if API fails
+          const key = `listings_${user.email}`;
+          const savedListings = JSON.parse(localStorage.getItem(key)) || [];
+          setListings(savedListings);
+        });
     }
   }, [user]);
 
@@ -64,8 +79,11 @@ const MyListings = () => {
                 {p.title}
               </h2>
 
-              <p className="text-gray-600 dark:text-gray-300">
-                {p.propertyType} in {p.city}
+              <p className="text-gray-600 dark:text-gray-300 capitalize">
+                {p.propertyType}
+              </p>
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
+                📍 {p.city}
               </p>
 
               <p className="text-gray-700 dark:text-gray-200 font-bold mt-2">
