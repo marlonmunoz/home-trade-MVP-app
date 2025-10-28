@@ -35,3 +35,7 @@ Endpoints:
     * 123456
     * Seller
 
+## DEPLOYING
+`home-trade-MVP-app/client/hometrade_mvp`
+`npm run deploy`
+
