@@ -200,14 +200,14 @@ const AllProperties = () => {
           placeholder="Search by title or city"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border p-2 rounded w-full sm:w-1/4 dark:bg-gray-700 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-700 p-2 rounded w-full sm:w-1/4 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
 
         <select
           name="propertyType"
           value={filters.propertyType}
           onChange={handleChange}
-          className="border p-2 rounded w-full sm:w-1/5 dark:bg-gray-700 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-700 p-2 rounded w-full sm:w-1/5 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         >
           <option value="">All Types</option>
           <option value="house">House</option>
@@ -219,7 +219,7 @@ const AllProperties = () => {
           name="bedrooms"
           value={filters.bedrooms}
           onChange={handleChange}
-          className="border p-2 rounded w-full sm:w-1/6 dark:bg-gray-700 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-700 p-2 rounded w-full sm:w-1/6 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         >
           <option value="">Any Bedrooms</option>
           <option value="1">1+</option>
@@ -235,7 +235,7 @@ const AllProperties = () => {
           value={filters.minPrice}
           onChange={handleChange}
           placeholder="Min Price"
-          className="border p-2 rounded w-full sm:w-1/6 dark:bg-gray-700 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-700 p-2 rounded w-full sm:w-1/6 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
         <input
           type="number"
@@ -243,7 +243,7 @@ const AllProperties = () => {
           value={filters.maxPrice}
           onChange={handleChange}
           placeholder="Max Price"
-          className="border p-2 rounded w-full sm:w-1/6 dark:bg-gray-700 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-700 p-2 rounded w-full sm:w-1/6 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
 
         {/* 🌈 Gradient Reset Button */}

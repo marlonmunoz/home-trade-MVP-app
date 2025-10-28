@@ -19,7 +19,10 @@ const Home = () => {
             </p>
             <button
               onClick={() => navigate("/register")}
-              className="px-6 py-3 bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white rounded-lg border border-gray-400 dark:border-white transition-colors"
+              className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
+                         text-white font-semibold px-6 py-3 rounded-lg shadow-md
+                         hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]
+                         transition-all duration-300 border border-gray-400 dark:border-white"
             >
               Get Started
             </button>

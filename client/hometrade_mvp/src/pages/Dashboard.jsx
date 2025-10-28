@@ -64,9 +64,9 @@ const Dashboard = () => {
         </p>
 
         {onboardingData ? (
-          <div className="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8 max-w-2xl mx-auto border border-gray-100 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-8 max-w-2xl mx-auto border-2 border-gray-200 dark:border-gray-700">
             {/* Header with role-based styling */}
-            <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200 dark:border-gray-700">
               <div className="flex items-center gap-3">
                 <div className="p-2 rounded-full bg-gradient-to-r from-green-400 to-green-600">
                   <CheckCircle className="w-6 h-6 text-white" />
@@ -82,7 +82,7 @@ const Dashboard = () => {
               </div>
               <button
                 onClick={() => navigate("/onboarding")}
-                className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors text-gray-600 dark:text-gray-300"
+                className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors text-gray-600 dark:text-gray-300 border border-gray-300 dark:border-gray-600"
               >
                 <Edit className="w-4 h-4" />
                 Edit
@@ -93,8 +93,8 @@ const Dashboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* City */}
               {onboardingData.city && (
-                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                  <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30">
+                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600">
+                  <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-800">
                     <MapPin className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                   </div>
                   <div>
@@ -110,8 +110,8 @@ const Dashboard = () => {
 
               {/* Budget (Buyer only) */}
               {user.role === "buyer" && onboardingData.budget && (
-                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                  <div className="p-2 rounded-lg bg-green-100 dark:bg-green-900/30">
+                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600">
+                  <div className="p-2 rounded-lg bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800">
                     <DollarSign className="w-5 h-5 text-green-600 dark:text-green-400" />
                   </div>
                   <div>
@@ -127,8 +127,8 @@ const Dashboard = () => {
 
               {/* Bedrooms (Buyer only) */}
               {user.role === "buyer" && onboardingData.bedrooms && (
-                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                  <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30">
+                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600">
+                  <div className="p-2 rounded-lg bg-purple-100 dark:bg-purple-900/30 border border-purple-200 dark:border-purple-800">
                     <Bed className="w-5 h-5 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
@@ -144,8 +144,8 @@ const Dashboard = () => {
 
               {/* Property Type */}
               {onboardingData.propertyType && (
-                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                  <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-900/30">
+                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600">
+                  <div className="p-2 rounded-lg bg-orange-100 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-800">
                     <Home className="w-5 h-5 text-orange-600 dark:text-orange-400" />
                   </div>
                   <div>
@@ -161,8 +161,8 @@ const Dashboard = () => {
 
               {/* Contact (Seller only) */}
               {user.role === "seller" && onboardingData.contact && (
-                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
-                  <div className="p-2 rounded-lg bg-pink-100 dark:bg-pink-900/30">
+                <div className="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl border border-gray-200 dark:border-gray-600">
+                  <div className="p-2 rounded-lg bg-pink-100 dark:bg-pink-900/30 border border-pink-200 dark:border-pink-800">
                     <Phone className="w-5 h-5 text-pink-600 dark:text-pink-400" />
                   </div>
                   <div>

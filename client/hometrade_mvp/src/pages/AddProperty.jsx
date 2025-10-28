@@ -68,7 +68,7 @@ const AddProperty = () => {
           value={form.title}
           onChange={handleChange}
           required
-          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
         <input
           name="city"
@@ -76,7 +76,7 @@ const AddProperty = () => {
           value={form.city}
           onChange={handleChange}
           required
-          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
         <input
           name="price"
@@ -84,20 +84,20 @@ const AddProperty = () => {
           value={form.price}
           onChange={handleChange}
           required
-          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
         <input
           name="bedrooms"
           placeholder="Bedrooms"
           value={form.bedrooms}
           onChange={handleChange}
-          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
         <select
           name="propertyType"
           value={form.propertyType}
           onChange={handleChange}
-          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         >
           <option value="house">House</option>
           <option value="apartment">Apartment</option>
@@ -108,7 +108,7 @@ const AddProperty = () => {
           placeholder="Description"
           value={form.description}
           onChange={handleChange}
-          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
           rows="3"
         />
         <input
@@ -116,7 +116,7 @@ const AddProperty = () => {
           placeholder="Image URL (optional)"
           value={form.imageUrl}
           onChange={handleChange}
-          className="border rounded w-full p-2 dark:bg-gray-800 dark:text-white"
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
 
         {/* 🌈 Animated Gradient Submit Button */}

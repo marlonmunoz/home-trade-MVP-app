@@ -60,7 +60,7 @@ const Login = () => {
             value={form.email}
             onChange={handleChange}
             disabled={success}
-            className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 mb-3 text-gray-800 dark:text-white"
+            className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 mb-3 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
           />
           <input
             type="password"
@@ -69,7 +69,7 @@ const Login = () => {
             value={form.password}
             onChange={handleChange}
             disabled={success}
-            className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 mb-4 text-gray-800 dark:text-white"
+            className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 mb-4 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
           />
 
           {/* 🌈 Gradient Login Button */}

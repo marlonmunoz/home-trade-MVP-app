@@ -66,27 +66,27 @@ const Onboarding = () => {
                 placeholder="Preferred City"
                 value={form.city}
                 onChange={handleChange}
-                className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white"
+                className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
               />
               <input
                 name="budget"
                 placeholder="Max Budget ($)"
                 value={form.budget}
                 onChange={handleChange}
-                className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white"
+                className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
               />
               <input
                 name="bedrooms"
                 placeholder="Minimum Bedrooms"
                 value={form.bedrooms}
                 onChange={handleChange}
-                className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white"
+                className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
               />
               <select
                 name="propertyType"
                 value={form.propertyType}
                 onChange={handleChange}
-                className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white"
+                className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
               >
                 <option value="">Property Type</option>
                 <option value="apartment">Apartment</option>
@@ -106,14 +106,14 @@ const Onboarding = () => {
                 value={form.city}
                 onChange={handleChange}
                 required
-                className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white"
+                className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
               />
               <select
                 name="propertyType"
                 value={form.propertyType}
                 onChange={handleChange}
                 required
-                className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white"
+                className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
               >
                 <option value="">Select Property Type</option>
                 <option value="apartment">Apartment</option>
@@ -129,7 +129,7 @@ const Onboarding = () => {
                 value={form.contact}
                 onChange={handleChange}
                 required
-                className="border border-gray-300 dark:border-gray-600 bg-transparent rounded w-full p-2 text-gray-800 dark:text-white"
+                className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-800 rounded w-full p-2 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
               />
             </>
           )}
