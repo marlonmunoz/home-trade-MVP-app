@@ -1,7 +1,48 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleNotifySignup = (e) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      setMessage("Please enter your email address");
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setMessage("Please enter a valid email address");
+      return;
+    }
+
+    // Save to localStorage for now (in production, this would go to a backend)
+    const existingEmails = JSON.parse(localStorage.getItem("launch_notifications") || "[]");
+    
+    if (existingEmails.includes(email)) {
+      setMessage("You're already signed up for notifications!");
+      return;
+    }
+
+    existingEmails.push(email);
+    localStorage.setItem("launch_notifications", JSON.stringify(existingEmails));
+
+    setIsSubmitted(true);
+    setMessage("🎉 Thank you! We'll notify you when we launch!");
+    setEmail("");
+
+    // Reset after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setMessage("");
+    }, 3000);
+  };
 
   return (
     <div className="min-h-screen relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/50 dark:to-purple-900/50 overflow-hidden text-gray-900 dark:text-white transition-colors">
@@ -99,31 +140,73 @@ const Home = () => {
             </p>
             
             {/* Navigation Buttons Container - Responsive layout */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center mb-6 sm:mb-8">
-              {/* Get Started Button */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center mb-6 sm:mb-8 max-w-2xl mx-auto">
+              
+              {/* Email Signup Form */}
+              {!isSubmitted ? (
+                <form onSubmit={handleNotifySignup} className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Enter your email for launch updates"
+                    className="flex-1 px-4 py-3 rounded-lg border-2 border-gray-300 dark:border-gray-600 
+                               bg-white dark:bg-gray-800 text-gray-900 dark:text-white
+                               focus:border-blue-500 dark:focus:border-purple-500 focus:outline-none
+                               text-base sm:text-lg transition-colors duration-200
+                               placeholder-gray-500 dark:placeholder-gray-400"
+                  />
+                  
+                  <button
+                    type="submit"
+                    className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
+                               text-white font-semibold px-6 py-3 rounded-lg shadow-md
+                               hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]
+                               transition-all duration-300 border border-gray-400 dark:border-white
+                               text-base sm:text-lg whitespace-nowrap"
+                  >
+                    Notify Me
+                  </button>
+                </form>
+              ) : (
+                <div className="text-center">
+                  <div className="bg-green-100 dark:bg-green-900/30 border-2 border-green-500 
+                                  rounded-lg px-6 py-4 text-green-700 dark:text-green-400">
+                    <p className="text-lg font-semibold">✅ You're on the list!</p>
+                    <p className="text-sm">We'll email you when HomeTrade launches</p>
+                  </div>
+                </div>
+              )}
+
+              {/* Message Display */}
+              {message && !isSubmitted && (
+                <p className="text-red-500 dark:text-red-400 text-sm text-center w-full">
+                  {message}
+                </p>
+              )}
+            </div>
+
+            {/* Secondary Actions */}
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center justify-center">
               <button
-                onClick={() => navigate("/register")}
-                className="bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
-                           text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-md
-                           hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]
-                           transition-all duration-300 border border-gray-400 dark:border-white
-                           text-base sm:text-lg md:text-xl w-full sm:w-auto min-w-[200px]"
+                onClick={() => navigate("/login")}
+                className="text-blue-600 dark:text-purple-400 hover:text-blue-700 dark:hover:text-purple-300
+                           font-medium text-base sm:text-lg underline decoration-2 underline-offset-4
+                           hover:decoration-blue-700 dark:hover:decoration-purple-300 transition-colors"
               >
-                Get Started
+                Already have an account? Login
               </button>
               
-              {/* Login Button - Visible on all screens */}
-              {/* <button
-                onClick={() => navigate("/login")}
-                className="bg-transparent border-2 border-blue-500 dark:border-purple-500 
-                           text-blue-600 dark:text-purple-400 font-semibold 
-                           px-6 sm:px-8 py-3 sm:py-4 rounded-lg shadow-md
-                           hover:bg-blue-50 dark:hover:bg-purple-900/20 hover:scale-[1.03]
-                           transition-all duration-300 text-base sm:text-lg md:text-xl 
-                           w-full sm:w-auto min-w-[200px]"
+              <span className="hidden sm:block text-gray-400">•</span>
+              
+              <button
+                onClick={() => navigate("/register")}
+                className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200
+                           font-medium text-base sm:text-lg underline decoration-2 underline-offset-4
+                           transition-colors"
               >
-                Login
-              </button> */}
+                Create Account Now
+              </button>
             </div>
             
             {/* Additional Info for Mobile */}
