@@ -1,5 +1,9 @@
 # HomeTrade MVP
 
+<div align="center">
+  <img src="./client//hometrade_mvp//src/assets/HTT_home.png" alt="HomeTrade Logo" width="400"/>
+</div>
+
 **HomeTrade** is a web-based real estate platform built as a minimum viable product (MVP). It enables **buyers** to discover and filter listings and **sellers** to list and manage properties — all within a modern, responsive user interface.  
 
 ## 🧩 Core Features
