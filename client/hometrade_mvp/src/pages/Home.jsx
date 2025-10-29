@@ -45,7 +45,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/50 dark:to-purple-900/50 overflow-hidden text-gray-900 dark:text-white transition-colors">
+    <div className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/50 dark:to-purple-900/50 overflow-hidden text-gray-900 dark:text-white transition-colors">
       
       {/* Geometric Buildings Background */}
       <div className="absolute bottom-0 left-0 right-0 h-96 opacity-20 dark:opacity-5 pointer-events-none">
@@ -120,7 +120,7 @@ const Home = () => {
       
       {/* Main Content with Backdrop Blur */}
       <div className="relative z-10 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-4 sm:py-8 min-h-screen flex items-center justify-center">
+        <div className="container mx-auto px-4 py-8 sm:py-16 min-h-screen flex items-center justify-center">
           <div className="text-center w-full max-w-4xl">
             {/* Marquee Text - Hidden on very small screens */}
             <div className="overflow-hidden whitespace-nowrap mb-2 sm:mb-4 hidden sm:block">
