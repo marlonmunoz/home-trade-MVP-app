@@ -21,8 +21,17 @@
   - `useTheme()` manages theme state, toggle logic and transitions.  
   - Components respond to role and auth state to conditionally render seller vs buyer UI.  
 
-## 🖥️ Tech Stack
+## 🖥️ Tech Stack LOGOS
+<p align="center">
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>
+  <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
+  <a href="https://vitejs.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vite-colored.svg" width="36" height="36" alt="Vite" /></a>
+  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/tailwindcss-colored.svg" width="36" height="36" alt="Tailwind CSS" /></a>
+  <a href="https://lucide.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/feather.svg" width="36" height="36" alt="Lucide React" /></a>
+</p>
 
+## 🖥️ Tech Stack
+- **JavaScript (ES6+)** – Modern JavaScript with arrow functions, destructuring, async/await, modules
 - **React** (Vite) – modern frontend library and build tool  
 - **Tailwind CSS** – utility-first styling framework  
 - **Framer Motion** – animations and transitions  
