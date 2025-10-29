@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { ArrowUp } from "lucide-react";
 import { useTheme } from "../contexts/ThemeContext";
 
@@ -356,6 +357,17 @@ const AllProperties = () => {
               <p className="text-sm text-gray-500 mt-1 line-clamp-2">
                 {p.description}
               </p>
+              
+              {/* View Details Button */}
+              <Link
+                to={`/property/${p.id}`}
+                className="mt-4 inline-block bg-button-gradient bg-[length:200%_200%] animate-gradientFlow
+                           text-white text-sm font-semibold px-4 py-2 rounded-lg shadow-md
+                           hover:scale-[1.03] hover:shadow-[0_0_12px_rgba(139,92,246,0.6)]
+                           transition-all duration-300 text-center w-full"
+              >
+                View Details
+              </Link>
             </div>
           ))}
         </div>
