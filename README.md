@@ -21,7 +21,7 @@
   - `useTheme()` manages theme state, toggle logic and transitions.  
   - Components respond to role and auth state to conditionally render seller vs buyer UI.  
 
-## 🖥️ Tech Stack LOGOS
+## 🖥️ Tech Stack 
 <p align="center">
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>
   <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
@@ -30,7 +30,7 @@
   <a href="https://lucide.dev/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/feather.svg" width="36" height="36" alt="Lucide React" /></a>
 </p>
 
-## 🖥️ Tech Stack
+<!-- ## 🖥️ Tech Stack -->
 - **JavaScript (ES6+)** – Modern JavaScript with arrow functions, destructuring, async/await, modules
 - **React** (Vite) – modern frontend library and build tool  
 - **Tailwind CSS** – utility-first styling framework  
@@ -118,6 +118,6 @@ Endpoints:
 
 
 ## DEPLOYING
-`home-trade-MVP-app/client/hometrade_mvp`
-`npm run deploy`
+1. `home-trade-MVP-app/client/hometrade_mvp`
+2. `npm run deploy`
 
