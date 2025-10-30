@@ -4,6 +4,7 @@
       "id": 1,
       "title": "Modern Downtown Apartment",
       "city": "New York",
+      "state": "NY",
       "price": "350000",
       "bedrooms": "2",
       "propertyType": "apartment",
@@ -15,6 +16,7 @@
       "id": 2,
       "title": "Charming Victorian House",
       "city": "San Francisco",
+      "state": "CA",
       "price": "875000",
       "bedrooms": "4",
       "propertyType": "house",
@@ -26,6 +28,7 @@
       "id": 3,
       "title": "Luxury Beachfront Condo",
       "city": "Miami",
+      "state": "FL",
       "price": "520000",
       "bedrooms": "3",
       "propertyType": "condo",
@@ -37,232 +40,567 @@
       "id": 4,
       "title": "Cozy Studio Apartment",
       "city": "Austin",
+      "state": "TX",
       "price": "185000",
       "bedrooms": "1",
       "propertyType": "apartment",
       "description": "Perfect starter home or investment property. Compact yet functional studio in a vibrant neighborhood. Close to restaurants, cafes, and public transportation.",
       "imageUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=250&fit=crop",
-      "ownerEmail": "seller1@example.com"
+      "ownerEmail": "seller4@example.com"
     },
     {
       "id": 5,
       "title": "Suburban Family Home",
       "city": "Phoenix",
+      "state": "AZ",
       "price": "425000",
       "bedrooms": "5",
       "propertyType": "house",
       "description": "Spacious family home in quiet suburban neighborhood. Large backyard perfect for entertaining, attached garage, and excellent school district. Move-in ready condition.",
       "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=250&fit=crop",
-      "ownerEmail": "seller4@example.com"
+      "ownerEmail": "seller5@example.com"
     },
     {
       "id": 6,
       "title": "Urban Loft Conversion",
       "city": "Chicago",
+      "state": "IL",
       "price": "295000",
       "bedrooms": "2",
       "propertyType": "condo",
       "description": "Industrial chic loft in converted warehouse. High ceilings, exposed brick walls, and modern amenities. Located in trendy arts district with galleries and restaurants nearby.",
       "imageUrl": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=250&fit=crop",
-      "ownerEmail": "seller2@example.com"
+      "ownerEmail": "seller6@example.com"
     },
     {
       "id": 7,
       "title": "Mountain View Cabin",
       "city": "Denver",
+      "state": "CO",
       "price": "380000",
       "bedrooms": "3",
       "propertyType": "house",
       "description": "Rustic cabin with modern updates and stunning mountain views. Perfect for outdoor enthusiasts. Features wood-burning fireplace, large deck, and easy access to hiking trails.",
       "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop",
-      "ownerEmail": "seller5@example.com"
+      "ownerEmail": "seller7@example.com"
     },
     {
       "id": 8,
       "title": "Historic Brownstone",
       "city": "Boston",
+      "state": "MA",
       "price": "695000",
       "bedrooms": "4",
       "propertyType": "house",
       "description": "Beautifully restored 19th-century brownstone in prestigious neighborhood. Original architectural details combined with modern conveniences. Private garden and parking space included.",
       "imageUrl": "https://images.unsplash.com/photo-1448630360428-65456885c650?w=400&h=250&fit=crop",
-      "ownerEmail": "seller3@example.com"
+      "ownerEmail": "seller8@example.com"
     },
     {
       "id": 9,
       "title": "Penthouse Suite",
       "city": "Seattle",
+      "state": "WA",
       "price": "750000",
       "bedrooms": "3",
       "propertyType": "condo",
       "description": "Luxury penthouse with panoramic city and water views. Floor-to-ceiling windows, private elevator access, and rooftop terrace. Premium building amenities and concierge service.",
       "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop",
-      "ownerEmail": "seller4@example.com"
+      "ownerEmail": "seller9@example.com"
     },
     {
       "id": 10,
       "title": "Garden Apartment",
       "city": "Portland",
+      "state": "OR",
       "price": "275000",
       "bedrooms": "2",
       "propertyType": "apartment",
       "description": "Ground-floor apartment with private garden access. Recently renovated with eco-friendly features. Great natural light and close to public transportation and bike paths.",
       "imageUrl": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=250&fit=crop",
-      "ownerEmail": "seller5@example.com"
+      "ownerEmail": "seller10@example.com"
     },
     {
       "id": 11,
       "title": "Waterfront Townhouse",
       "city": "Tampa",
+      "state": "FL",
       "price": "485000",
       "bedrooms": "3",
       "propertyType": "house",
       "description": "Stunning waterfront townhouse with private dock access. Open-concept living with vaulted ceilings, gourmet kitchen, and panoramic water views. Perfect for boating enthusiasts.",
       "imageUrl": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=250&fit=crop",
-      "ownerEmail": "seller6@example.com"
+      "ownerEmail": "seller11@example.com"
     },
     {
       "id": 12,
       "title": "Modern High-Rise Condo",
       "city": "Atlanta",
+      "state": "GA",
       "price": "395000",
       "bedrooms": "2",
       "propertyType": "condo",
       "description": "Sleek modern condo on the 25th floor with floor-to-ceiling windows and city skyline views. Premium building amenities include rooftop pool, fitness center, and 24/7 concierge service.",
       "imageUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=250&fit=crop",
-      "ownerEmail": "seller6@example.com"
+      "ownerEmail": "seller12@example.com"
     },
     {
       "id": 13,
       "title": "Desert Oasis Villa",
       "city": "Scottsdale",
+      "state": "AZ",
       "price": "625000",
       "bedrooms": "4",
       "propertyType": "house",
       "description": "Luxurious desert villa with stunning mountain views and private pool. Features include outdoor kitchen, fire pit, and xeriscaped gardens. Perfect for entertaining in the Arizona sunshine.",
       "imageUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=250&fit=crop",
-      "ownerEmail": "seller7@example.com"
+      "ownerEmail": "seller13@example.com"
     },
     {
       "id": 14,
       "title": "Historic Warehouse Loft",
       "city": "Nashville",
+      "state": "TN",
       "price": "315000",
       "bedrooms": "1",
       "propertyType": "condo",
       "description": "Converted warehouse loft in the heart of Music City. Exposed brick walls, original hardwood floors, and soaring ceilings. Walking distance to live music venues and restaurants.",
       "imageUrl": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=250&fit=crop",
-      "ownerEmail": "seller7@example.com"
+      "ownerEmail": "seller14@example.com"
     },
     {
       "id": 15,
       "title": "Lakefront Cottage",
       "city": "Lake Tahoe",
+      "state": "CA",
       "price": "780000",
       "bedrooms": "3",
       "propertyType": "house",
       "description": "Charming lakefront cottage with private beach access. Features include stone fireplace, wraparound deck, and panoramic lake views. Perfect vacation home or year-round residence.",
       "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop",
-      "ownerEmail": "seller8@example.com"
+      "ownerEmail": "seller15@example.com"
     },
     {
       "id": 16,
       "title": "Downtown Studio",
       "city": "Minneapolis",
+      "state": "MN",
       "price": "165000",
       "bedrooms": "1",
       "propertyType": "apartment",
       "description": "Efficient downtown studio perfect for young professionals. Modern amenities, in-unit laundry, and walking distance to skyways. Building features gym and rooftop terrace.",
       "imageUrl": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400&h=250&fit=crop",
-      "ownerEmail": "seller8@example.com"
+      "ownerEmail": "seller16@example.com"
     },
     {
       "id": 17,
       "title": "Colonial Estate",
       "city": "Richmond",
+      "state": "VA",
       "price": "535000",
       "bedrooms": "5",
       "propertyType": "house",
       "description": "Elegant colonial estate on 2 acres with mature landscaping. Features include formal dining room, library, and three-car garage. Historic charm meets modern convenience.",
       "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=250&fit=crop",
-      "ownerEmail": "seller9@example.com"
+      "ownerEmail": "seller17@example.com"
     },
     {
       "id": 18,
       "title": "Beach House Retreat",
       "city": "Outer Banks",
+      "state": "NC",
       "price": "695000",
       "bedrooms": "4",
       "propertyType": "house",
       "description": "Stunning oceanfront beach house with private boardwalk to the beach. Features include widow's walk, screened porches, and outdoor shower. Perfect for family vacations.",
       "imageUrl": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=250&fit=crop",
-      "ownerEmail": "seller9@example.com"
+      "ownerEmail": "seller18@example.com"
     },
     {
       "id": 19,
       "title": "Art District Loft",
       "city": "Santa Fe",
+      "state": "NM",
       "price": "425000",
       "bedrooms": "2",
       "propertyType": "condo",
       "description": "Artistic loft in the heart of Santa Fe's art district. Features include exposed vigas, kiva fireplace, and private courtyard. Walking distance to galleries and pueblo-style architecture.",
       "imageUrl": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=250&fit=crop",
-      "ownerEmail": "seller10@example.com"
+      "ownerEmail": "seller19@example.com"
     },
     {
       "id": 20,
       "title": "Urban Townhome",
       "city": "Baltimore",
+      "state": "MD",
       "price": "345000",
       "bedrooms": "3",
       "propertyType": "house",
       "description": "Recently renovated townhome in trendy Federal Hill. Features include rooftop deck with harbor views, modern kitchen, and off-street parking. Close to Inner Harbor attractions.",
       "imageUrl": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=250&fit=crop",
-      "ownerEmail": "seller10@example.com"
+      "ownerEmail": "seller20@example.com"
     },
     {
       "id": 21,
       "title": "Mountain Cabin",
       "city": "Asheville",
+      "state": "NC",
       "price": "465000",
       "bedrooms": "3",
       "propertyType": "house",
       "description": "Cozy mountain cabin surrounded by Blue Ridge Mountains. Features include stone fireplace, hot tub, and hiking trails nearby. Perfect retreat for nature lovers and outdoor enthusiasts.",
       "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop",
-      "ownerEmail": "seller11@example.com"
+      "ownerEmail": "seller21@example.com"
     },
     {
       "id": 22,
       "title": "Luxury High-Rise",
       "city": "Las Vegas",
+      "state": "NV",
       "price": "585000",
       "bedrooms": "2",
       "propertyType": "condo",
       "description": "Luxury high-rise condo with Strip views. Features include marble countertops, smart home technology, and resort-style amenities. Building offers spa, pools, and world-class dining.",
       "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop",
-      "ownerEmail": "seller11@example.com"
+      "ownerEmail": "seller22@example.com"
     },
     {
       "id": 23,
       "title": "Farmhouse Renovation",
       "city": "Burlington",
+      "state": "VT",
       "price": "385000",
       "bedrooms": "4",
       "propertyType": "house",
       "description": "Beautifully renovated 1800s farmhouse on 5 acres. Features include original wide-plank floors, modern kitchen, and barn for storage. Perfect blend of historic charm and modern comfort.",
       "imageUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=250&fit=crop",
-      "ownerEmail": "seller12@example.com"
+      "ownerEmail": "seller23@example.com"
     },
     {
       "id": 24,
       "title": "Riverside Apartment",
       "city": "Sacramento",
+      "state": "CA",
       "price": "285000",
       "bedrooms": "2",
       "propertyType": "apartment",
       "description": "Charming riverside apartment with water views and private balcony. Features include updated amenities, in-unit washer/dryer, and access to river walking trails.",
       "imageUrl": "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=250&fit=crop",
-      "ownerEmail": "seller12@example.com"
+      "ownerEmail": "seller24@example.com"
+    },
+    {
+      "id": 25,
+      "title": "Riverside Craftsman Home",
+      "city": "Birmingham",
+      "state": "AL",
+      "price": "315000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Beautiful craftsman-style home near downtown Birmingham. Features spacious porch, hardwood floors, and updated kitchen. Walking distance to parks and restaurants.",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&h=250&fit=crop",
+      "ownerEmail": "seller25@example.com"
+    },
+    {
+      "id": 26,
+      "title": "Modern Mountain Retreat",
+      "city": "Anchorage",
+      "state": "AK",
+      "price": "495000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Scenic mountain retreat with panoramic views of Chugach Range. Energy-efficient design with modern finishes. Perfect for nature lovers and winter sports enthusiasts.",
+      "imageUrl": "https://images.unsplash.com/photo-1599420186946-7b1c1a4cc51e?w=400&h=250&fit=crop",
+      "ownerEmail": "seller14@example.com"
+    },
+    {
+      "id": 27,
+      "title": "Desert Adobe Home",
+      "city": "Santa Fe",
+      "state": "NM",
+      "price": "420000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Traditional adobe-style home with vigas and kiva fireplace. Includes private courtyard and art studio. Located near galleries and desert trails.",
+      "imageUrl": "https://images.unsplash.com/photo-1621788980935-cb8f48c3b4e3?w=400&h=250&fit=crop",
+      "ownerEmail": "seller15@example.com"
+    },
+    {
+      "id": 28,
+      "title": "Lakeside Cottage",
+      "city": "Little Rock",
+      "state": "AR",
+      "price": "265000",
+      "bedrooms": "2",
+      "propertyType": "house",
+      "description": "Cozy lakeside home with open floor plan and large deck overlooking the water. Ideal for quiet getaways or full-time living.",
+      "imageUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=250&fit=crop",
+      "ownerEmail": "seller15@example.com"
+    },
+    {
+      "id": 29,
+      "title": "Bay Area Loft",
+      "city": "San Jose",
+      "state": "CA",
+      "price": "735000",
+      "bedrooms": "2",
+      "propertyType": "condo",
+      "description": "Stylish loft in Silicon Valley with open-concept design, high ceilings, and modern finishes. Perfect for tech professionals.",
+      "imageUrl": "https://images.unsplash.com/photo-1494526585095-c41746248156?w=400&h=250&fit=crop",
+      "ownerEmail": "seller16@example.com"
+    },
+    {
+      "id": 30,
+      "title": "Ski Chalet Retreat",
+      "city": "Aspen",
+      "state": "CO",
+      "price": "920000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Luxury chalet with breathtaking mountain views. Includes fireplace, large patio, and ski-in/ski-out access to nearby slopes.",
+      "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop",
+      "ownerEmail": "seller17@example.com"
+    },
+    {
+      "id": 31,
+      "title": "Harborfront Apartment",
+      "city": "Bridgeport",
+      "state": "CT",
+      "price": "385000",
+      "bedrooms": "2",
+      "propertyType": "apartment",
+      "description": "Waterfront apartment with harbor views, modern kitchen, and secure parking. Steps away from the marina and local shops.",
+      "imageUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=250&fit=crop",
+      "ownerEmail": "seller17@example.com"
+    },
+    {
+      "id": 32,
+      "title": "Historic Row House",
+      "city": "Wilmington",
+      "state": "DE",
+      "price": "310000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Charming brick row home in historic district. Includes renovated kitchen, private courtyard, and off-street parking.",
+      "imageUrl": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&h=250&fit=crop",
+      "ownerEmail": "seller18@example.com"
+    },
+    {
+      "id": 33,
+      "title": "Coastal Bungalow",
+      "city": "Honolulu",
+      "state": "HI",
+      "price": "840000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Beachfront bungalow with direct ocean access. Open-air design with tropical landscaping and stunning sunset views.",
+      "imageUrl": "https://images.unsplash.com/photo-1505691723518-36a0f673dfe1?w=400&h=250&fit=crop",
+      "ownerEmail": "seller19@example.com"
+    },
+    {
+      "id": 34,
+      "title": "Ranch Home on the Prairie",
+      "city": "Boise",
+      "state": "ID",
+      "price": "320000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Single-story ranch home with wide open views and modern farmhouse touches. Spacious yard and two-car garage included.",
+      "imageUrl": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&h=250&fit=crop",
+      "ownerEmail": "seller19@example.com"
+    },
+    {
+      "id": 35,
+      "title": "Urban Condo",
+      "city": "Indianapolis",
+      "state": "IN",
+      "price": "285000",
+      "bedrooms": "2",
+      "propertyType": "condo",
+      "description": "Contemporary condo in the heart of downtown Indianapolis. Features open kitchen, balcony views, and secure garage parking.",
+      "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop",
+      "ownerEmail": "seller20@example.com"
+    },
+    {
+      "id": 36,
+      "title": "Country Home Retreat",
+      "city": "Topeka",
+      "state": "KS",
+      "price": "275000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Country-style home surrounded by rolling hills. Includes a wraparound porch, spacious kitchen, and large garden.",
+      "imageUrl": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&h=250&fit=crop",
+      "ownerEmail": "seller20@example.com"
+    },
+    {
+      "id": 37,
+      "title": "Riverside Apartment",
+      "city": "Louisville",
+      "state": "KY",
+      "price": "255000",
+      "bedrooms": "2",
+      "propertyType": "apartment",
+      "description": "Modern apartment overlooking the Ohio River. Open-concept design with stainless appliances and walkable downtown location.",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&h=250&fit=crop",
+      "ownerEmail": "seller21@example.com"
+    },
+    {
+      "id": 38,
+      "title": "French Quarter Condo",
+      "city": "New Orleans",
+      "state": "LA",
+      "price": "475000",
+      "bedrooms": "2",
+      "propertyType": "condo",
+      "description": "Elegant French Quarter condo with wrought-iron balcony and courtyard views. High ceilings and classic New Orleans charm.",
+      "imageUrl": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=250&fit=crop",
+      "ownerEmail": "seller21@example.com"
+    },
+    {
+      "id": 39,
+      "title": "Seaside Colonial",
+      "city": "Portland",
+      "state": "ME",
+      "price": "495000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Historic colonial-style home near Portland Harbor. Features modern kitchen, garden, and wraparound porch with ocean breeze.",
+      "imageUrl": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&h=250&fit=crop",
+      "ownerEmail": "seller22@example.com"
+    },
+    {
+      "id": 40,
+      "title": "Chesapeake Bay Cottage",
+      "city": "Annapolis",
+      "state": "MD",
+      "price": "415000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Waterfront cottage with private dock access. Classic East Coast charm with modern updates and outdoor patio area.",
+      "imageUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=250&fit=crop",
+      "ownerEmail": "seller22@example.com"
+    },
+    {
+      "id": 41,
+      "title": "Rural Ranch Estate",
+      "city": "Billings",
+      "state": "MT",
+      "price": "350000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Spacious ranch-style estate on acres of Montana prairie. Includes barn, guest quarters, and panoramic mountain views.",
+      "imageUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=250&fit=crop",
+      "ownerEmail": "seller23@example.com"
+    },
+    {
+      "id": 42,
+      "title": "Victorian Townhouse",
+      "city": "Omaha",
+      "state": "NE",
+      "price": "325000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Restored Victorian townhouse with original charm and updated finishes. Walkable neighborhood near downtown Omaha.",
+      "imageUrl": "https://images.unsplash.com/photo-1505691723518-36a0f673dfe1?w=400&h=250&fit=crop",
+      "ownerEmail": "seller23@example.com"
+    },
+    {
+      "id": 43,
+      "title": "Modern Loft Apartment",
+      "city": "Manchester",
+      "state": "NH",
+      "price": "295000",
+      "bedrooms": "2",
+      "propertyType": "apartment",
+      "description": "Sleek downtown loft with exposed brick and tall windows. Open floor plan ideal for urban living and entertaining guests.",
+      "imageUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=250&fit=crop",
+      "ownerEmail": "seller24@example.com"
+    },
+    {
+      "id": 44,
+      "title": "Jersey Shore Home",
+      "city": "Atlantic City",
+      "state": "NJ",
+      "price": "565000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Charming beach house steps from the shore. Spacious deck, ocean views, and newly renovated interior with coastal décor.",
+      "imageUrl": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=250&fit=crop",
+      "ownerEmail": "seller24@example.com"
+    },
+    {
+      "id": 45,
+      "title": "Desert Ridge Villa",
+      "city": "Las Cruces",
+      "state": "NM",
+      "price": "395000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Elegant villa with mountain and desert views. Includes pool, covered patio, and eco-friendly solar features.",
+      "imageUrl": "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=400&h=250&fit=crop",
+      "ownerEmail": "seller25@example.com"
+    },
+    {
+      "id": 46,
+      "title": "Historic Brick Home",
+      "city": "Charleston",
+      "state": "SC",
+      "price": "645000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Classic Southern home with restored brick façade, courtyard, and antique hardwood floors. Near historic downtown district.",
+      "imageUrl": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&h=250&fit=crop",
+      "ownerEmail": "seller25@example.com"
+    },
+    {
+      "id": 47,
+      "title": "Prairie View Bungalow",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "price": "285000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Quiet suburban home with open living area and large backyard. Perfect blend of comfort and simplicity.",
+      "imageUrl": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&h=250&fit=crop",
+      "ownerEmail": "seller26@example.com"
+    },
+    {
+      "id": 48,
+      "title": "Riverfront Cabin",
+      "city": "Bozeman",
+      "state": "MT",
+      "price": "410000",
+      "bedrooms": "2",
+      "propertyType": "house",
+      "description": "Charming riverside cabin surrounded by pine trees. Includes wood-burning stove, outdoor deck, and fishing access.",
+      "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop",
+      "ownerEmail": "seller26@example.com"
+    },
+    {
+      "id": 49,
+      "title": "Downtown Loft Apartment",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "price": "375000",
+      "bedrooms": "2",
+      "propertyType": "apartment",
+      "description": "Stylish loft apartment near city center. Exposed beams, natural light, and walking distance to shops and restaurants.",
+      "imageUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=250&fit=crop",
+      "ownerEmail": "seller27@example.com"
+    },
+    {
+      "id": 50,
+      "title": "Lakeshore Villa",
+      "city": "Madison",
+      "state": "WI",
+      "price": "525000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Beautiful lakefront property with private dock, open living space, and panoramic water views. Ideal for families.",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&h=250&fit=crop",
+      "ownerEmail": "seller27@example.com"
     }
+
+    
   ]
 }

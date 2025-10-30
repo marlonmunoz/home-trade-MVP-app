@@ -14,6 +14,7 @@ const AllProperties = () => {
     minPrice: "",
     maxPrice: "",
     city: "",
+    state: "",
   });
 
   const [showFilterBar, setShowFilterBar] = useState(true);
@@ -126,7 +127,8 @@ const AllProperties = () => {
       filteredResults = filteredResults.filter(
         (p) =>
           p.title.toLowerCase().includes(term) ||
-          p.city.toLowerCase().includes(term)
+          p.city.toLowerCase().includes(term) ||
+          p.state.toLowerCase().includes(term)
       );
     }
 
@@ -145,6 +147,12 @@ const AllProperties = () => {
     if (filters.city.trim()) {
       filteredResults = filteredResults.filter((p) =>
         p.city.toLowerCase().includes(filters.city.toLowerCase())
+      );
+    }
+
+    if (filters.state.trim()) {
+      filteredResults = filteredResults.filter((p) =>
+        p.state.toLowerCase().includes(filters.state.toLowerCase())
       );
     }
 
@@ -173,6 +181,7 @@ const AllProperties = () => {
       minPrice: "",
       maxPrice: "",
       city: "",
+      state: "",
     });
     setSearch("");
     setFiltered(listings);
@@ -246,11 +255,70 @@ const AllProperties = () => {
       >
         <input
           type="text"
-          placeholder="Search by title or city"
+          placeholder="Search by title ,city or state"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-700 p-2 rounded w-full sm:w-1/4 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
         />
+
+        <select
+          name="state"
+          value={filters.state}
+          onChange={handleChange}
+          className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-700 p-2 rounded w-full sm:w-1/6 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
+        >
+          <option value="">All States</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+        </select>
 
         <select
           name="propertyType"
@@ -277,6 +345,7 @@ const AllProperties = () => {
           <option value="4">4+</option>
           <option value="5">5+</option>
         </select>
+        
 
         <input
           type="number"
@@ -327,12 +396,12 @@ const AllProperties = () => {
                   className="w-full h-48 object-cover rounded mb-3"
                   onError={(e) => {
                     e.target.src =
-                      'https://via.placeholder.com/400x250?text=No+Image';
+                      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg==';
                   }}
                 />
               ) : (
                 <img
-                  src="https://via.placeholder.com/400x250?text=No+Image"
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlPC90ZXh0Pjwvc3ZnPg=="
                   alt="Placeholder"
                   className="w-full h-48 object-cover rounded mb-3"
                 />
@@ -344,7 +413,7 @@ const AllProperties = () => {
                 {p.propertyType}
               </p>
               <p className="text-gray-500 dark:text-gray-400 text-sm">
-                📍 {p.city}
+                📍 {p.city}, {p.state}
               </p>
               <p className="text-gray-700 dark:text-gray-200 font-bold mt-2">
                 {/* $ {p.price} */}
