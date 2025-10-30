@@ -13,39 +13,45 @@ const Home = () => {
   const features = [
     { 
       icon: HomeIcon, 
-      text: "Direct buyer-seller connections without middlemen", 
+      text: "Direct buyer-seller connections without agents or escrow delays", 
       highlight: "Connect Directly",
-      color: "text-blue-500 dark:text-blue-400"
+      color: "text-blue-500 dark:text-blue-400",
+      savings: "Save $15,000+ in agent fees"
     },
     { 
       icon: DollarSign, 
-      text: "Save thousands with lower transaction fees", 
+      text: "Transparent pricing with no hidden blockchain or crypto fees", 
       highlight: "Save Money",
-      color: "text-green-500 dark:text-green-400"
+      color: "text-green-500 dark:text-green-400",
+      savings: "3% total fees vs 6% traditional"
     },
     { 
       icon: Zap, 
-      text: "Close deals in days, not months", 
+      text: "Close deals in days without complex AI escrow processes", 
       highlight: "Move Fast",
-      color: "text-yellow-500 dark:text-yellow-400"
+      color: "text-yellow-500 dark:text-yellow-400",
+      savings: "30 days faster than traditional"
     },
     { 
       icon: Search, 
-      text: "AI-powered property matching and search", 
+      text: "Smart property matching without blockchain complexity", 
       highlight: "Smart Search",
-      color: "text-purple-500 dark:text-purple-400"
+      color: "text-purple-500 dark:text-purple-400",
+      savings: "No crypto knowledge needed"
     },
     { 
       icon: Smartphone, 
-      text: "Mobile-first platform for modern users", 
+      text: "Mobile-first platform built for regular people, not agents", 
       highlight: "Mobile Ready",
-      color: "text-pink-500 dark:text-pink-400"
+      color: "text-pink-500 dark:text-pink-400",
+      savings: "Consumer-friendly design"
     },
     { 
       icon: Shield, 
-      text: "Secure transactions with verified users", 
+      text: "Secure transactions with simple verification, no blockchain required", 
       highlight: "Stay Safe",
-      color: "text-indigo-500 dark:text-indigo-400"
+      color: "text-indigo-500 dark:text-indigo-400",
+      savings: "Bank-level security"
     }
   ];
 
@@ -188,9 +194,19 @@ const Home = () => {
             </h1>
             
             {/* Subtitle - Responsive sizing */}
-            <p className="text-gray-400 dark:text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
+            <p className="text-gray-400 dark:text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl mb-4 max-w-2xl mx-auto px-2">
               YOUR ONLY REAL ESTATE PLATFORM
             </p>
+            
+            {/* Competitive Differentiation */}
+            <div className="mb-6 sm:mb-8">
+              <p className="text-blue-600 dark:text-purple-400 text-lg sm:text-xl font-semibold mb-2">
+                Skip the middlemen. Trade homes directly.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
+                No blockchain complexity • No agent commissions • No crypto required
+              </p>
+            </div>
             {/* Dynamic Feature Carousel */}
             <div className="mb-8 max-w-2xl mx-auto">
               <div className="bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20 dark:border-gray-700/50">
@@ -210,9 +226,14 @@ const Home = () => {
                 {/* Feature Description with Fade Animation */}
                 <p 
                   key={currentFeature} 
-                  className="text-gray-600 dark:text-gray-300 animate-fade-in text-lg"
+                  className="text-gray-600 dark:text-gray-300 animate-fade-in text-lg mb-2"
                 >
                   {features[currentFeature].text}
+                </p>
+                
+                {/* Savings Highlight */}
+                <p className="text-green-600 dark:text-green-400 font-semibold text-sm">
+                  {features[currentFeature].savings}
                 </p>
                 
                 {/* Progress Dots */}
