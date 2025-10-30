@@ -54,21 +54,53 @@ const AllProperties = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pulse]);
 
-  // 🏠 Load listings from localStorage
-  // useEffect(() => {
-  //   const allKeys = Object.keys(localStorage);
-  //   const allListings = [];
+  // 🏠 Load listings from static JSON and localStorage
+  useEffect(() => {
+    const loadAllProperties = async () => {
+      try {
+        // Load from static JSON file first
+        const response = await fetch('/home-trade-MVP-app/db.json');
+        let staticProperties = [];
+        if (response.ok) {
+          const data = await response.json();
+          staticProperties = data.properties || [];
+        }
 
-  //   allKeys.forEach((key) => {
-  //     if (key.startsWith("listings_")) {
-  //       const data = JSON.parse(localStorage.getItem(key)) || [];
-  //       allListings.push(...data);
-  //     }
-  //   });
+        // Load user-added properties from localStorage
+        const allKeys = Object.keys(localStorage);
+        const userProperties = [];
 
-  //   setListings(allListings);
-  //   setFiltered(allListings);
-  // }, []);
+        allKeys.forEach((key) => {
+          if (key.startsWith("listings_")) {
+            const data = JSON.parse(localStorage.getItem(key)) || [];
+            userProperties.push(...data);
+          }
+        });
+
+        // Combine both sources
+        const allProperties = [...staticProperties, ...userProperties];
+        setListings(allProperties);
+        setFiltered(allProperties);
+      } catch (error) {
+        console.error('Error loading properties:', error);
+        // Fallback to localStorage only
+        const allKeys = Object.keys(localStorage);
+        const userProperties = [];
+
+        allKeys.forEach((key) => {
+          if (key.startsWith("listings_")) {
+            const data = JSON.parse(localStorage.getItem(key)) || [];
+            userProperties.push(...data);
+          }
+        });
+
+        setListings(userProperties);
+        setFiltered(userProperties);
+      }
+    };
+
+    loadAllProperties();
+  }, []);
 
   // 🌐 Load listings from JSON Server API (COMMENTED OUT FOR GITHUB PAGES DEPLOYMENT)
   // useEffect(() => {

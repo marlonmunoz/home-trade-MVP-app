@@ -36,14 +36,27 @@ const PropertyDetails = () => {
         setLoading(true);
         setError(null);
         
-        // Fetch from static JSON file (GitHub Pages deployment)
-        const response = await fetch('/home-trade-MVP-app/db.json');
-        if (!response.ok) {
-          throw new Error('Failed to fetch properties');
+        // First, check localStorage for user-added properties
+        let foundProperty = null;
+        
+        // Get all users' listings from localStorage
+        const localStorageKeys = Object.keys(localStorage).filter(key => key.startsWith('listings_'));
+        for (const key of localStorageKeys) {
+          const userListings = JSON.parse(localStorage.getItem(key) || '[]');
+          foundProperty = userListings.find(p => p.id === parseInt(id));
+          if (foundProperty) break;
         }
         
-        const data = await response.json();
-        const foundProperty = data.properties.find(p => p.id === parseInt(id));
+        // If not found in localStorage, fetch from static JSON file
+        if (!foundProperty) {
+          const response = await fetch('/home-trade-MVP-app/db.json');
+          if (!response.ok) {
+            throw new Error('Failed to fetch properties');
+          }
+          
+          const data = await response.json();
+          foundProperty = data.properties.find(p => p.id === parseInt(id));
+        }
         
         if (!foundProperty) {
           setError('Property not found');
