@@ -255,7 +255,7 @@ const AllProperties = () => {
       >
         <input
           type="text"
-          placeholder="Search by title ,city or state"
+          placeholder="Search by title or city"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="border border-gray-400 dark:border-gray-600 bg-white dark:bg-gray-700 p-2 rounded w-full sm:w-1/4 text-gray-900 dark:text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 transition-colors duration-200"
