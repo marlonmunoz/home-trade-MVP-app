@@ -1,11 +1,63 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Home as HomeIcon, DollarSign, Zap, Search, Smartphone, Shield } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [message, setMessage] = useState("");
+
+  // Feature carousel state
+  const features = [
+    { 
+      icon: HomeIcon, 
+      text: "Direct buyer-seller connections without middlemen", 
+      highlight: "Connect Directly",
+      color: "text-blue-500 dark:text-blue-400"
+    },
+    { 
+      icon: DollarSign, 
+      text: "Save thousands with lower transaction fees", 
+      highlight: "Save Money",
+      color: "text-green-500 dark:text-green-400"
+    },
+    { 
+      icon: Zap, 
+      text: "Close deals in days, not months", 
+      highlight: "Move Fast",
+      color: "text-yellow-500 dark:text-yellow-400"
+    },
+    { 
+      icon: Search, 
+      text: "AI-powered property matching and search", 
+      highlight: "Smart Search",
+      color: "text-purple-500 dark:text-purple-400"
+    },
+    { 
+      icon: Smartphone, 
+      text: "Mobile-first platform for modern users", 
+      highlight: "Mobile Ready",
+      color: "text-pink-500 dark:text-pink-400"
+    },
+    { 
+      icon: Shield, 
+      text: "Secure transactions with verified users", 
+      highlight: "Stay Safe",
+      color: "text-indigo-500 dark:text-indigo-400"
+    }
+  ];
+
+  const [currentFeature, setCurrentFeature] = useState(0);
+
+  // Auto-rotate features every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentFeature(prev => (prev + 1) % features.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [features.length]);
 
   const handleNotifySignup = (e) => {
     e.preventDefault();
@@ -120,6 +172,7 @@ const Home = () => {
       
       {/* Main Content with Backdrop Blur */}
       <div className="relative z-10 backdrop-blur-sm">
+        {/* <div className="container mx-auto px-4 py-8 sm:py-16 min-h-screen flex items-center justify-center"> */}
         <div className="container mx-auto px-4 py-8 sm:py-16 min-h-screen flex items-center justify-center">
           <div className="text-center w-full max-w-4xl">
             {/* Marquee Text - Hidden on very small screens */}
@@ -138,6 +191,65 @@ const Home = () => {
             <p className="text-gray-400 dark:text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-2xl mx-auto px-2">
               YOUR ONLY REAL ESTATE PLATFORM
             </p>
+            {/* Dynamic Feature Carousel */}
+            <div className="mb-8 max-w-2xl mx-auto">
+              <div className="bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20 dark:border-gray-700/50">
+                {/* Feature Icon and Highlight */}
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="p-2 bg-white/20 dark:bg-gray-700/50 rounded-lg backdrop-blur-sm">
+                    {React.createElement(features[currentFeature].icon, {
+                      size: 28,
+                      className: `${features[currentFeature].color} animate-pulse`
+                    })}
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-600 dark:text-purple-400">
+                    {features[currentFeature].highlight}
+                  </h3>
+                </div>
+                
+                {/* Feature Description with Fade Animation */}
+                <p 
+                  key={currentFeature} 
+                  className="text-gray-600 dark:text-gray-300 animate-fade-in text-lg"
+                >
+                  {features[currentFeature].text}
+                </p>
+                
+                {/* Progress Dots */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {features.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentFeature(index)}
+                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                        index === currentFeature 
+                          ? 'bg-blue-500 dark:bg-purple-400 w-6' 
+                          : 'bg-gray-400 dark:bg-gray-600 hover:bg-gray-500'
+                      }`}
+                      aria-label={`Feature ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+              
+              {/* Quick Stats Row */}
+              <div className="grid grid-cols-3 gap-4 mt-6">
+                <div className="text-center">
+                  <div className="text-xl font-bold text-blue-500 dark:text-purple-400">61+</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">Properties</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-green-500">
+                    {Object.keys(localStorage).filter(key => key.startsWith('listings_')).length}
+                  </div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">Active Sellers</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-pink-500">50</div>
+                  <div className="text-xs text-gray-600 dark:text-gray-400">States</div>
+                </div>
+              </div>
+            </div>
             
             {/* Navigation Buttons Container - Responsive layout */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center mb-6 sm:mb-8 max-w-2xl mx-auto">

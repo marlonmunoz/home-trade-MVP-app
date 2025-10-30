@@ -33,6 +33,18 @@
   }
 }
 
+/* Fade-in animation for feature carousel */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -44,4 +56,8 @@
 
 .animate-marquee {
   animation: marquee 35s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
 }
