@@ -599,8 +599,138 @@
       "description": "Beautiful lakefront property with private dock, open living space, and panoramic water views. Ideal for families.",
       "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&h=250&fit=crop",
       "ownerEmail": "seller27@example.com"
+    },
+    {
+      "id": 51,
+      "title": "Mountain Ranch Estate",
+      "city": "Cheyenne",
+      "state": "WY",
+      "price": "395000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Spacious ranch estate with stunning mountain views and wide open spaces. Features include modern amenities, large barn, and acreage perfect for horses.",
+      "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=250&fit=crop",
+      "ownerEmail": "seller28@example.com"
+    },
+    {
+      "id": 52,
+      "title": "Appalachian Cabin Retreat",
+      "city": "Charleston",
+      "state": "WV",
+      "price": "285000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Cozy mountain cabin nestled in the Appalachian foothills. Features include wood-burning fireplace, wraparound porch, and hiking trails nearby.",
+      "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=250&fit=crop",
+      "ownerEmail": "seller28@example.com"
+    },
+    {
+      "id": 53,
+      "title": "Historic Newport Cottage",
+      "city": "Newport",
+      "state": "RI",
+      "price": "485000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Charming coastal cottage near Newport's famous mansions. Features include ocean views, renovated kitchen, and private garden.",
+      "imageUrl": "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=400&h=250&fit=crop",
+      "ownerEmail": "seller29@example.com"
+    },
+    {
+      "id": 54,
+      "title": "Philadelphia Brownstone",
+      "city": "Philadelphia",
+      "state": "PA",
+      "price": "425000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Classic Philadelphia brownstone in historic neighborhood. Features include original hardwood floors, updated kitchen, and rooftop deck.",
+      "imageUrl": "https://images.unsplash.com/photo-1448630360428-65456885c650?w=400&h=250&fit=crop",
+      "ownerEmail": "seller29@example.com"
+    },
+    {
+      "id": 55,
+      "title": "Oklahoma Prairie Home",
+      "city": "Oklahoma City",
+      "state": "OK",
+      "price": "265000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Spacious family home on the Oklahoma prairie. Features include large front porch, open floor plan, and storm shelter.",
+      "imageUrl": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&h=250&fit=crop",
+      "ownerEmail": "seller30@example.com"
+    },
+    {
+      "id": 56,
+      "title": "Columbus Urban Loft",
+      "city": "Columbus",
+      "state": "OH",
+      "price": "315000",
+      "bedrooms": "2",
+      "propertyType": "condo",
+      "description": "Modern loft in downtown Columbus with exposed brick walls and high ceilings. Walking distance to restaurants and entertainment.",
+      "imageUrl": "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=250&fit=crop",
+      "ownerEmail": "seller30@example.com"
+    },
+    {
+      "id": 57,
+      "title": "North Dakota Farmhouse",
+      "city": "Fargo",
+      "state": "ND",
+      "price": "225000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Traditional farmhouse with modern updates on spacious lot. Features include large kitchen, covered porch, and detached garage.",
+      "imageUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=250&fit=crop",
+      "ownerEmail": "seller31@example.com"
+    },
+    {
+      "id": 58,
+      "title": "St. Louis Riverfront Condo",
+      "city": "St. Louis",
+      "state": "MO",
+      "price": "295000",
+      "bedrooms": "2",
+      "propertyType": "condo",
+      "description": "Elegant condo with Mississippi River views. Features include modern amenities, balcony, and building concierge services.",
+      "imageUrl": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop",
+      "ownerEmail": "seller31@example.com"
+    },
+    {
+      "id": 59,
+      "title": "Mississippi Delta Home",
+      "city": "Jackson",
+      "state": "MS",
+      "price": "195000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Southern charm meets modern comfort in this Delta region home. Features include wide front porch, updated interior, and large backyard.",
+      "imageUrl": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=400&h=250&fit=crop",
+      "ownerEmail": "seller32@example.com"
+    },
+    {
+      "id": 60,
+      "title": "Detroit Urban Revival",
+      "city": "Detroit",
+      "state": "MI",
+      "price": "185000",
+      "bedrooms": "3",
+      "propertyType": "house",
+      "description": "Beautifully renovated home in Detroit's revitalized downtown area. Features include modern kitchen, hardwood floors, and private parking.",
+      "imageUrl": "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&h=250&fit=crop",
+      "ownerEmail": "seller32@example.com"
+    },
+    {
+      "id": 61,
+      "title": "Iowa Countryside Estate",
+      "city": "Des Moines",
+      "state": "IA",
+      "price": "275000",
+      "bedrooms": "4",
+      "propertyType": "house",
+      "description": "Peaceful countryside home with rolling hills views. Features include spacious rooms, modern kitchen, and large lot perfect for gardening.",
+      "imageUrl": "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&h=250&fit=crop",
+      "ownerEmail": "seller33@example.com"
     }
-
-    
   ]
 }
