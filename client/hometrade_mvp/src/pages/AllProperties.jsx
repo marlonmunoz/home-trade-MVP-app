@@ -347,7 +347,8 @@ const AllProperties = () => {
                 📍 {p.city}
               </p>
               <p className="text-gray-700 dark:text-gray-200 font-bold mt-2">
-                ${p.price}
+                {/* $ {p.price} */}
+                $ {Number(p.price).toLocaleString()} 
               </p>
               {p.bedrooms && (
                 <p className="text-sm text-gray-500 mt-1">
