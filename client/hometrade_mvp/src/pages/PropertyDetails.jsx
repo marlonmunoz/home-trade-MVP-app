@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Bed, Home, DollarSign, Mail, Phone } from 'lucide-react';
+import { ArrowLeft, MapPin, Bed, Home, DollarSign, Mail, Phone, Heart } from 'lucide-react';
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -21,6 +21,13 @@ const PropertyDetails = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [isFavorited, setIsFavorited] = useState(false);
+
+  // Check if property is favorited on load
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem('favoriteProperties') || '[]');
+    setIsFavorited(favorites.includes(parseInt(id)));
+  }, [id]);
 
   // Fetch property data
   useEffect(() => {
@@ -110,6 +117,24 @@ const PropertyDetails = () => {
       setSubmitMessage('❌ Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  // Toggle favorite status
+  const toggleFavorite = () => {
+    const favorites = JSON.parse(localStorage.getItem('favoriteProperties') || '[]');
+    const propertyId = parseInt(id);
+    
+    if (isFavorited) {
+      // Remove from favorites
+      const updatedFavorites = favorites.filter(favId => favId !== propertyId);
+      localStorage.setItem('favoriteProperties', JSON.stringify(updatedFavorites));
+      setIsFavorited(false);
+    } else {
+      // Add to favorites
+      const updatedFavorites = [...favorites, propertyId];
+      localStorage.setItem('favoriteProperties', JSON.stringify(updatedFavorites));
+      setIsFavorited(true);
     }
   };
 
@@ -220,7 +245,7 @@ const PropertyDetails = () => {
                 alt={property.title}
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.target.src = 'https://via.placeholder.com/800x400?text=No+Image+Available';
+                  e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk5vIEltYWdlIEF2YWlsYWJsZTwvdGV4dD48L3N2Zz4=';
                 }}
               />
             ) : (
@@ -241,6 +266,24 @@ const PropertyDetails = () => {
                 </span>
               </div>
             </div>
+
+            {/* Favorite Button */}
+            <div className="absolute top-4 left-4">
+              <button
+                onClick={toggleFavorite}
+                className={`p-3 rounded-full shadow-md transition-all duration-300 hover:scale-110 ${
+                  isFavorited
+                    ? 'bg-red-500 text-white hover:bg-red-600'
+                    : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400'
+                }`}
+                title={isFavorited ? 'Remove from favorites' : 'Add to favorites'}
+              >
+                <Heart 
+                  size={24} 
+                  className={isFavorited ? 'fill-current' : ''} 
+                />
+              </button>
+            </div>
           </div>
 
           {/* Property Information */}
@@ -254,7 +297,7 @@ const PropertyDetails = () => {
               <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-300">
                 <div className="flex items-center gap-1">
                   <MapPin size={18} />
-                  <span className="capitalize">{property.city}</span>
+                  <span className="capitalize">{property.city}, {property.state}</span>
                 </div>
                 
                 {property.bedrooms && (
@@ -309,7 +352,7 @@ const PropertyDetails = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-800 dark:text-white">Location</p>
-                    <p className="text-gray-600 dark:text-gray-300 capitalize">{property.city}</p>
+                    <p className="text-gray-600 dark:text-gray-300 capitalize">{property.city}, {property.state}</p>
                   </div>
                 </div>
 
