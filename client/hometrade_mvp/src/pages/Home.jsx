@@ -209,10 +209,10 @@ const Home = () => {
             </div>
             {/* Dynamic Feature Carousel */}
             <div className="mb-8 max-w-2xl mx-auto">
-              <div className="bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20 dark:border-gray-700/50">
+              <div className="bg-white/60 dark:bg-gray-800/30 backdrop-blur-sm rounded-xl p-6 text-center border-2 border-blue-200/60 dark:border-gray-700/50 shadow-lg shadow-blue-100/50 dark:shadow-gray-900/50">
                 {/* Feature Icon and Highlight */}
                 <div className="flex items-center justify-center gap-3 mb-3">
-                  <div className="p-2 bg-white/20 dark:bg-gray-700/50 rounded-lg backdrop-blur-sm">
+                  <div className="p-2 bg-white/40 dark:bg-gray-700/50 rounded-lg backdrop-blur-sm border border-blue-100 dark:border-gray-600 shadow-sm">
                     {React.createElement(features[currentFeature].icon, {
                       size: 28,
                       className: `${features[currentFeature].color} animate-pulse`
