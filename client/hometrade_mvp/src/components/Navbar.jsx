@@ -219,14 +219,6 @@ const Navbar = () => {
             </>
           )}
 
-          {/* Theme Toggle */}
-          <div className="relative group flex flex-col items-center">
-            <ThemeToggle />
-            <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
-              Theme
-            </span>
-          </div>
-
           {/* Logout */}
           <div className="relative group flex flex-col items-center">
             <button
@@ -237,6 +229,14 @@ const Navbar = () => {
             </button>
             <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
               Logout
+            </span>
+          </div>
+
+          {/* Theme Toggle */}
+          <div className="relative group flex flex-col items-center">
+            <ThemeToggle />
+            <span className="absolute bottom-10 opacity-0 group-hover:opacity-100 bg-gray-800 text-white text-xs rounded px-2 py-1 transition-all transform scale-90 group-hover:scale-100 animate-fade-in-scale">
+              Theme
             </span>
           </div>
         </div>
