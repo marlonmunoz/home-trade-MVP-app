@@ -497,13 +497,13 @@ export default defineConfig({
 | Feature | HomeTrade | Propy |
 |---------|-----------|-------|
 | **Target Market** | B2C Consumers | B2B/Enterprise |
-| **Technology** | Traditional Web | Blockchain/Crypto |
+| **Technology** | Consumer Blockchain | Complex Blockchain/Crypto |
 | **Complexity** | Simple & Intuitive | Technical/Complex |
 | **Fees** | 3% Total | 6%+ Traditional |
 | **Mobile Experience** | Native Mobile-First | Desktop-Heavy |
 | **User Onboarding** | 3-Step Process | Complex B2B Setup |
-| **Payment Methods** | Traditional Finance | Crypto Required |
-| **Transaction Speed** | Days | Weeks (Escrow) |
+| **Payment Methods** | Blockchain + Traditional | Crypto Required |
+| **Transaction Speed** | Smart Contract Speed | Weeks (Escrow) |
 
 ### **Strategic Differentiation**
 ```markdown
@@ -512,9 +512,9 @@ export default defineConfig({
 ## "Skip the middlemen. Trade homes directly. Save thousands."
 
 ### Key Messaging:
-- ✅ No blockchain complexity
+- ✅ Secure blockchain transactions
 - ✅ No agent commissions  
-- ✅ No crypto required
+- ✅ Smart contract protection
 - ✅ Built for regular people
 - ✅ Mobile-native experience
 - ✅ Direct buyer-seller connections
@@ -588,8 +588,8 @@ export default defineConfig({
    - Property investment tools
 
 2. **Advanced Features**
-   - Blockchain integration (optional)
-   - Smart contract support
+   - Advanced blockchain features
+   - Multi-chain smart contracts
    - DAO governance model
    - Token-based incentives
 ```

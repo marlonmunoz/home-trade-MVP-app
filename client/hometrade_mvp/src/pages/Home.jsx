@@ -34,10 +34,10 @@ const Home = () => {
     },
     { 
       icon: Search, 
-      text: "Smart property matching without blockchain complexity", 
+      text: "Smart property matching with blockchain-verified transactions", 
       highlight: "Smart Search",
       color: "text-purple-500 dark:text-purple-400",
-      savings: "No crypto knowledge needed"
+      savings: "Blockchain-secured deals"
     },
     { 
       icon: Smartphone, 
@@ -48,10 +48,10 @@ const Home = () => {
     },
     { 
       icon: Shield, 
-      text: "Secure transactions with simple verification, no blockchain required", 
+      text: "Secure blockchain transactions with smart contract verification", 
       highlight: "Stay Safe",
       color: "text-indigo-500 dark:text-indigo-400",
-      savings: "Bank-level security"
+      savings: "Blockchain-level security"
     }
   ];
 
@@ -204,7 +204,7 @@ const Home = () => {
                 Skip the middlemen. Trade homes directly.
               </p>
               <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
-                No blockchain complexity • No agent commissions • No crypto required
+                Secure blockchain transactions • No agent commissions • Direct peer-to-peer trading
               </p>
             </div>
             {/* Dynamic Feature Carousel */}
